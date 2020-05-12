@@ -30,6 +30,9 @@
       },
       "validator": {
         "entry": "./src/pages/validator/index.js"
+      },
+      "bugdemo": {
+        "entry": "./src/pages/bugdemo/index.js"
       }
     },
     "pageTemplate": "./src/layout/layout.html",
@@ -43,19 +46,24 @@
     },
     "plugins": [
       "module:./plugin.js",
-      ["vue"],
-      ["resource", {
-        "map": {
-          "vue": {
-            "external": "Vue",
-            "js": "https://gw.alipayobjects.com/as/g/h5-lib/vue/2.5.13/vue.min.js"
-          },
-          "fastclick": {
-            "external": "FastClick",
-            "js": "https://gw.alipayobjects.com/as/g/luna-component/luna-fastclick/0.3.1/index.js"
+      [
+        "vue"
+      ],
+      [
+        "resource",
+        {
+          "map": {
+            "vue": {
+              "external": "Vue",
+              "js": "https://gw.alipayobjects.com/as/g/h5-lib/vue/2.5.13/vue.min.js"
+            },
+            "fastclick": {
+              "external": "FastClick",
+              "js": "https://gw.alipayobjects.com/as/g/luna-component/luna-fastclick/0.3.1/index.js"
+            }
           }
         }
-      }],
+      ],
       [
         "env"
       ]
