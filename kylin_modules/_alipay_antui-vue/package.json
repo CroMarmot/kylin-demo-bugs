@@ -1,0 +1,155 @@
+{
+  "name": "@alipay/antui-vue",
+  "description": "",
+  "version": "0.4.8-open02",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alipay-inc.com:vue-component/antui.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  },
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "rimraf ./lib/ && concurrently --kill-others \"tnpm run dev:js\" \"tnpm run dev:vue\" ",
+    "dev:js": "cross-env BABEL_ENV=ANTUI babel src --out-dir lib --copy-files --ignore demo,.md,.less --watch",
+    "dev:vue": "cross-env BABEL_ENV=ANTUI webpack --watch --config ./build/webpack/webpack.dev.conf.js",
+    "build": "tnpm run build:px",
+    "build:px": "rimraf ./lib/ && tnpm run build:js:px && tnpm run build:vue",
+    "build:rem": "rimraf ./lib/ && tnpm run build:js:rem && tnpm run build:vue",
+    "build:js:px": "cross-env BABEL_ENV=ANTUI babel src --out-dir lib --copy-files --ignore demo,.md,.less --config",
+    "build:js:rem": "cross-env BABEL_ENV=ANTUI ANTUI_REM=true babel src --out-dir lib --copy-files --ignore demo,.md,.less",
+    "build:vue": "cross-env BABEL_ENV=ANTUI webpack --config ./build/webpack/webpack.prod.conf.js",
+    "lint": "eslint ./src/ --ext js --ext vue",
+    "lint:fix": "eslint --fix ./src/ --ext js --ext vue",
+    "prepublish": "tnpm run build",
+    "open": "tnpm publish --tag open",
+    "ci": "node ci.js",
+    "test": "tnpm run test:snapshot && tnpm run test:screenshot",
+    "test:snapshot": "cross-env BABEL_ENV=JEST jest --no-cache",
+    "test:screenshot": "tnpm run test:screenshot:config && tnpm run test:screenshot:build && tnpm run test:screenshot:run",
+    "test:report": "tnpm run test:screenshot:report",
+    "test:screenshot:config": "node ./test/scripts/screenshot-config.js",
+    "test:screenshot:build": "rimraf ./test/dist/ && cross-env BABEL_ENV=BUILD NODE_ENV=test webpack --config ./build/webpack/webpack.test.conf.js",
+    "test:screenshot:run": "casperjs test ./test/scripts/screenshot-start.js",
+    "test:screenshot:report": "node ./test/scripts/screenshot-report.js",
+    "test:screenshot:clean": "rimraf __screenshot__/**/*.fail.png __screenshot__/**/*.diff.png __screenshot__/failure",
+    "clean": "tnpm run test:screenshot:clean"
+  },
+  "peerDependencies": {
+    "vue": "^2.1.6",
+    "vue-template-compiler": "^2.1.6",
+    "@alipay/antui": "10.1.10"
+  },
+  "dependencies": {
+    "@ali/vue-component-swiper": "file:./kylin_modules/_ali_vue-component-swiper",
+    "@alipay/antui": "file:./kylin_modules/_alipay_antui"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "devDependencies": {
+    "@ali/babel-preset-es2015-nebula": "^6.22.7",
+    "@ali/vue-pre-loader": "^0.5.0",
+    "@alipay/antui": "10.1.10",
+    "@alipay/basement": "^2.11.0",
+    "autoprefixer": "^6.3.6",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.1.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-jest": "^18.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-import": "^1.2.1",
+    "babel-plugin-minify-mangle-names": "^0.2.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.1.1",
+    "babel-plugin-transform-vue-jsx": "^3.4.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "casperjs": "^1.1.4",
+    "chalk": "^2.0.1",
+    "co": "^4.6.0",
+    "concurrently": "^3.5.0",
+    "connect-history-api-fallback": "^1.3.0",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "cssnano": "^3.10.0",
+    "eslint": "~3.5.0",
+    "eslint-config-standard": "~6.0.1",
+    "eslint-plugin-jsx": "^0.0.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "eslint-plugin-vue": "^2.0.1",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.11.2",
+    "highlight.js": "^9.12.0",
+    "html-webpack-plugin": "^2.29.0",
+    "jest": "^18.1.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.0",
+    "less-plugin-npm-import": "^2.1.0",
+    "ls": "^0.2.1",
+    "markdown-meta": "^0.0.3",
+    "node-uuid": "^1.4.8",
+    "phantomcss": "^1.1.5",
+    "phantomjs-prebuilt": "^2.1.15",
+    "postcss": "^5.0.19",
+    "postcss-loader": "~0.8.0",
+    "pre-commit": "^1.2.2",
+    "raw-loader": "^0.5.1",
+    "resemblejs": "~2.5.0",
+    "rimraf": "^2.6.1",
+    "slugify": "^1.2.1",
+    "snap-shot": "^2.7.1",
+    "spooky": "^0.2.5",
+    "touch-emulator": "^1.0.0",
+    "url-loader": "^0.5.9",
+    "urllib": "^2.25.0",
+    "vue": "2.1.6",
+    "vue-hot-reload-api": "^2.0.8",
+    "vue-loader": "^12.2.1",
+    "vue-markdown-loader": "^1.0.0",
+    "vue-router": "^2.7.0",
+    "vue-server-renderer": "2.1.6",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "2.1.6",
+    "vuex": "^2.3.1",
+    "webpack": "^1.15.0",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^0.14.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js",
+      "\\.(css|less)$": "<rootDir>/build/scripts/style-mock.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+demo.+\\.vue$": "<rootDir>/build/scripts/vue-demo-transform.js",
+      "^.+(?!demo).+\\.vue$": "<rootDir>/build/scripts/vue-component-transform.js",
+      "^.+\\.js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ali/vue-component)"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";var _bootstrap=require("./bootstrap"),_bootstrap2=_interopRequireDefault(_bootstrap),_co=require("co"),_co2=_interopRequireDefault(_co);function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}(0,_bootstrap2.default)()().catch(e=>{console.error(e)});

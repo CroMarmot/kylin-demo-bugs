@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>筛选－默认</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/uwmegRFFioXMpolfnQis.css" />
+
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/widget/filter.css" media="all">
+</head>
+<body ontouchstart="">
+<div class="demo-content">
+    <div class="demo-header">筛选</div>
+    <div class="demo-header-brief">Filter</div>
+    <div class="demo-type-title">筛选项目一行三列，默认纯文字，可以有icon，需自定义样式；<br/>
+        单选，选择后收起筛选面板；<br/>
+        多选，需要确认按钮，建议全屏幕筛选；
+    </div>
+</div>
+<div class="am-filter-mask show"></div>
+<div class="am-filter show">
+    <ul class="am-filter-list">
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item am-filter-item-selected">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+        <li class="am-filter-item-wrap">
+            <label class="am-filter-item">
+                筛选项
+            </label>
+        </li>
+    </ul>
+
+</div>
+
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="/g/antui/antui/10.0.20-beta01/antui.js"></script>
+<script src="https://os.alipayobjects.com/rmsportal/EKtaVvHrUynCHVtNYmhn.js"></script>
+<script>
+  $(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+    var selectedClass = 'am-filter-item-selected';
+
+    if (isInAlipay) {
+      AlipayJSBridge.call('setOptionMenu', {
+        title: '筛选'
+      });
+      AlipayJSBridge.call('showOptionMenu');
+    }
+    document.addEventListener('optionMenu', function() {
+        $('.am-filter').toggleClass('show');
+        $('.am-filter-mask').toggleClass('show');
+    });
+
+    $('.am-filter-item').on('click', function(e) {
+      var el = $(this);
+      var filterDom = el.parents('.am-filter');
+      $('.'+selectedClass).toggleClass(selectedClass);
+      el.addClass(selectedClass);
+      filterDom.removeClass('show');
+      filterDom.prev().removeClass('show');
+    });
+  });
+</script>
+
+</body>
+</html>

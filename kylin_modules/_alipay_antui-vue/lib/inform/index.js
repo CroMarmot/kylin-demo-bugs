@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _inform=require('./inform.vue');var _inform2=_interopRequireDefault(_inform);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');{require('@alipay/antui/dist/dpl/widget/inform.css')}exports.default=_inform2.default;

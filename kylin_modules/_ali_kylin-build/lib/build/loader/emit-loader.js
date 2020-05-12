@@ -1,0 +1,1 @@
+"use strict";const loaderUtils=require("loader-utils"),path=require("path");module.exports=function(s){const e=path.relative(this.options.context,this.resource).replace(/\.(less|sass|scss)$/,".css");return this.emitFile(e,s),""};

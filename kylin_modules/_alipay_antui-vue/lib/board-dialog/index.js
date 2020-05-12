@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _boardDialog=require('./board-dialog.vue');var _boardDialog2=_interopRequireDefault(_boardDialog);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_boardDialog2.default;

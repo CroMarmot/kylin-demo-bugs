@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var deviceIsAndroid=typeof navigator!=='undefined'?navigator.userAgent.indexOf('Android')>0:false;var deviceIsIOS=typeof navigator!=='undefined'?/iP(ad|hone|od)/.test(navigator.userAgent):false;var os=exports.os=!deviceIsAndroid?'ios':'android';

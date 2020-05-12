@@ -1,0 +1,13 @@
+<template>
+<div class="am-tab-panel-wrap">
+  <Tab class="am-tab-panel-tab" :scroll="scroll" @input="onTabInput" :value="currentValue" ref="tab" :resistant="resistant" :reverseTime="reverseTime" :reverseTimingFunction="reverseTimingFunction" :slideRate="slideRate">
+    <TabItem v-for="(label, index) in labels" v-bind:key="index" :id="index">{{ label }}</TabItem>
+  </Tab>
+  <Swiper :freeMode="false" @stop="onPanelStop" ref="swiper" class="am-tab-panel-swiper" :slideTime="slideTime" :slideTimingFunction="slideTimingFunction">
+    <slot></slot>
+  </Swiper>
+</div>
+</template>
+<style>.am-tab-panel-wrap{position:relative;height:auto;max-height:100%}.am-tab-panel-tab{z-index:1}.am-tab-panel-swiper{position:relative;margin-top:-42px;height:100%;padding-top:42px;-webkit-box-sizing:border-box;box-sizing:border-box}.am-tab-panel-swiper .am-swiper-wrapper{height:100%;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start}</style>
+<script generated>'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _vueComponentSwiper=require('@ali/vue-component-swiper');var _tab=require('../tab');var _tab2=_interopRequireDefault(_tab);var _tabItem=require('../tab-item');var _tabItem2=_interopRequireDefault(_tabItem);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.default={name:'TabPanel',components:{Swiper:_vueComponentSwiper.Swiper,Tab:_tab2.default,TabItem:_tabItem2.default},props:{scroll:{type:Boolean,default:true},initialValue:{type:Number,default:0},value:{type:Number,default:0},labels:{type:Array,default:[]},resistant:{type:Number,default:0.2},reverseTimingFunction:{type:String},reverseTime:{type:Number,default:0.15},slideTime:{type:Number,default:0.3},slideTimingFunction:{type:String,default:'cubic-bezier(.86,0,.07,1)'},slideRate:{type:Number,default:0.1}},data:function data(){return{currentValue:null}},watch:{value:function value(c,a){this.currentValue=c;this.scrollPanel(c)}},methods:{onPanelStop:function onPanelStop(b){if(this.currentValue===b){return}this.currentValue=b;this.$emit('input',b);this.scrollTab(b)},onTabInput:function onTabInput(b){if(this.currentValue===b){return}this.currentValue=b;this.$emit('input',b);this.scrollPanel(b)},scrollTab:function scrollTab(b){if(this.scroll){this.$refs.tab.$refs.nav.scrollToIndex(b,'center')}},scrollPanel:function scrollPanel(c){var a=arguments.length>1&&arguments[1]!==undefined?arguments[1]:true;this.$refs.swiper.scrollToIndex(c,undefined,a)}},created:function created(){this.currentValue=this.value===undefined?this.value:this.initialValue},mounted:function mounted(){this.scrollPanel(this.currentValue,false)}};</script>
+

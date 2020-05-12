@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+node_modules
+.vscode
+/dist
+/_dist
+/_package
+/www
+/tmp
+/open.zip

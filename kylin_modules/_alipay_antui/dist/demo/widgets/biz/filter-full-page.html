@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>筛选－全屏</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/uwmegRFFioXMpolfnQis.css" />
+
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/widget/filter.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="am-tab">
+    <div class="am-tab-wrap">
+        <div class="am-tab-scroll-nav" style="transform: translateX(-0px);">
+            <div class="am-tab-item selected">分段1</div>
+            <div class="am-tab-item">分段2</div>
+            <div class="am-tab-item">分段3</div>
+            <div class="am-tab-item">分段4</div>
+            <div class="am-tab-item">分段5</div>
+            <div class="am-tab-item">分段6</div>
+            <div class="am-tab-item">分段7</div>
+            <div class="am-tab-item">分段8</div>
+        </div>
+        <div class="am-tab-scroll-left"></div>
+        <div class="am-tab-scroll-right show"></div>
+    </div>
+    <a class="am-tab-btn"><i class="am-icon am-tab-dropdown" ></i></a>
+</div>
+<div class="demo-content" style="position: relative; height: 100%;">
+
+    <div class="demo-header">筛选</div>
+    <div class="demo-header-brief">Filter</div>
+    <div class="demo-type-title">筛选可以配置tab一起使用，右边下拉icon展示筛选面板<br/>
+        可以给筛选项分类，并增加分类名称，可以有推荐的筛选项目；<br/>
+        多选，需要确认按钮，建议全屏幕筛选；
+    </div>
+
+    <div class="am-filter am-filter-full-page show">
+        <ul class="am-filter-list">
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item am-filter-item-selected">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item am-filter-item-selected">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item am-filter-item-selected">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+            <li class="am-filter-item-wrap">
+                <a class="am-filter-item">
+                    筛选项
+                </a>
+            </li>
+        </ul>
+
+        <div class="am-filter-button-wrap">
+            <button class="am-filter-button-clear">重置</button>
+            <button class="am-filter-button-confirm">确定</button>
+        </div>
+
+    </div>
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="/g/antui/antui/10.0.20-beta01/antui.js"></script>
+<script src="https://os.alipayobjects.com/rmsportal/EKtaVvHrUynCHVtNYmhn.js"></script>
+<script src="/g/antui/antui/10.0.20-beta01/script/tab-nav.js"></script>
+<script type="text/javascript">
+  $(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+    var selectedClass = 'am-filter-item-selected';
+
+    $('.am-tab-btn').on('click', function() {
+      $('.am-filter').toggleClass('show');
+      $('.am-filter-mask').toggleClass('show');
+    });
+
+    $('.am-filter-item').on('click', function(e) {
+      var el = $(this);
+      var filterDom = el.parents('.am-filter');
+      $(el).toggleClass(selectedClass);
+    });
+
+    $('.am-filter-button-confirm').on('click', function(e) {
+      var el = $(this);
+      var filterDom = el.parents('.am-filter');
+      filterDom.removeClass('show');
+    });
+
+    $('.am-filter-button-clear').on('click', function(e) {
+      var el = $(this);
+      var filterDom = el.parents('.am-filter');
+      var els = filterDom.find('.' + selectedClass);
+      $.each(els, function(_, el) {
+        $(el).removeClass(selectedClass);
+      });
+    });
+
+    var tab = new TabNav('.am-tab');
+  })
+</script>
+
+</body>
+</html>

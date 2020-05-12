@@ -1,0 +1,1 @@
+"use strict";var loaderUtils=require("loader-utils");module.exports=function(r){this.cacheable&&this.cacheable();var t=[];try{var e=(loaderUtils.getOptions(this)||{}).paths||"[]";t=JSON.parse(e)}catch(r){}try{return r.replace("__TO_BE_REPLACE_PLUGIN_PATH_ARRAY__","[\n"+t.map(function(r){return`require(${JSON.stringify(r)})`}).join(",\n")+"]\n")}catch(t){return r}};

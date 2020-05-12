@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var co = require('co');
+program
+  .usage(`[group-name]`)
+
+program.parse(process.argv);
+
+program.cwd = process.cwd();
+
+var init = require('../lib/ls/index.js');
+
+co(function *() {
+  yield init.default(program)
+}).catch(function (err) {
+  console.error(err);
+});

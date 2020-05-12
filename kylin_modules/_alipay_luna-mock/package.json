@@ -1,0 +1,53 @@
+{
+    "name": "@alipay/luna-mock",
+    "version": "0.6.0",
+    "author": "简钰 <jianyu.lxd@alibaba-inc.com>",
+    "description": "支付宝H5容器本地浏览器mock",
+    "keywords": [
+        "支付宝",
+        "容器",
+        "luna"
+    ],
+    "main": "dist/index.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.alipay-inc.com:luna/luna-mock.git"
+    },
+    "scripts": {
+        "dev": "node ./dev.js",
+        "build": "rollup -c",
+        "qtdeploy": "qtdeploy all",
+        "lint": "eslint src/** demo/mock.config.js",
+        "lint-fix": "eslint --fix src/** demo/mock.config.js",
+        "test": "mocha ./tests --recursive --require ./tests/setup.js",
+        "test-cov": "istanbul cover _mocha -- ./tests --recursive --require ./tests/setup.js",
+        "ci": "npm run lint"
+    },
+    "devDependencies": {
+        "@alipay/qingting-deploy": "^0.3.0",
+        "chai": "~3.5.0",
+        "eslint": "^3.12.2",
+        "eslint-config-airbnb": "^13.0.0",
+        "eslint-config-standard": "^6.2.1",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-promise": "^3.4.0",
+        "eslint-plugin-standard": "^2.0.1",
+        "istanbul": "~0.4.5",
+        "jsdom": "~9.5.0",
+        "mocha": "~3.1.0",
+        "rollup": "^0.38.0",
+        "rollup-plugin-buble": "^0.15.0",
+        "rollup-watch": "^2.5.0",
+        "sinon": "~1.17.6",
+        "sinon-chai": "~2.8.0",
+        "webpack": "^1.14.0",
+        "webpack-dev-server": "^1.16.2"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npm.alibaba-inc.com"
+    }
+}

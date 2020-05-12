@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <script>
+    (function () {
+      var htmlFontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+      var bodyFontSize = '16px';
+      var styleDom = document.createElement('style');
+      styleDom.innerHTML = 'html{font-size:' + htmlFontSize + '!important;}body{font-size:' + bodyFontSize + '!important;}';
+      document.getElementsByTagName('head')[0].appendChild(styleDom)
+    })();
+  </script>
+</head>
+<body>
+  {% block body %}
+  <div id="app"></div>
+  {% endblock %}
+</body>
+</html>

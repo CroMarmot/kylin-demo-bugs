@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _checkboxInline=require('./checkbox-inline.vue');var _checkboxInline2=_interopRequireDefault(_checkboxInline);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_checkboxInline2.default;

@@ -1,0 +1,91 @@
+{
+  "scripts": {
+    "dev": "kylin build --dev",
+    "dev:preview": "kylin build --dev --open index",
+    "dev:watch": "kylin build --watch --no-prod --hot --no-compress",
+    "dev:mock": "kylin build --dev --mock ./mock/mock.config.js",
+    "lint": "eslint ./src/ --ext js --ext vue",
+    "lint:fix": "eslint --fix ./src/ --ext js --ext vue",
+    "build:debug": "rimraf ./www/ && kylin build --no-compress",
+    "build": "rimraf ./www/ && kylin build",
+    "init-page": "kylin init-page",
+    "init-component": "kylin init-component",
+    "mpaas:open:npm": "kylin-pack --npm --no-devdep --out ./kylin_modules/ --package @ali/kylin-framework@0.1.10-open,@ali/kylin-cli@0.1.8-open,@ali/kylin-build@0.1.49-open01,@alipay/alipayjsapi@3.1.0,@ali/kylin-plugin-resource@0.1.0,@ali/kylin-plugin-env@0.1.0,@ali/kylin-plugin-vue@0.8.0,@alipay/antui-vue@0.4.6-open03",
+    "mpaas:open:cnpm": "kylin-pack --no-devdep --out ./kylin_modules/ --package @ali/kylin-framework@0.1.10-open,@ali/kylin-cli@0.1.8-open,@ali/kylin-build@0.1.49-open01,@alipay/alipayjsapi@3.1.0,@ali/kylin-plugin-resource@0.1.0,@ali/kylin-plugin-env@0.1.0,@ali/kylin-plugin-vue@0.8.0,@alipay/antui-vue@0.4.6-open03"
+  },
+  "kylinApp": {
+    "output": "www",
+    "pages": {
+      "index": {
+        "entry": "./src/pages/index/index.js"
+      },
+      "loadmore": {
+        "entry": "./src/pages/loadmore/index.js"
+      },
+      "listview": {
+        "entry": "./src/pages/listview/index.js"
+      },
+      "dialogue": {
+        "entry": "./src/pages/dialogue/index.js"
+      },
+      "validator": {
+        "entry": "./src/pages/validator/index.js"
+      }
+    },
+    "pageTemplate": "./src/layout/layout.html",
+    "devPort": 8090,
+    "dirAlias": {
+      "common": "./src/common/",
+      "pages": "./src/pages/"
+    },
+    "options": {
+      "enableGlobalResourceInject": true
+    },
+    "plugins": [
+      "module:./plugin.js",
+      ["vue"],
+      ["resource", {
+        "map": {
+          "vue": {
+            "external": "Vue",
+            "js": "https://gw.alipayobjects.com/as/g/h5-lib/vue/2.5.13/vue.min.js"
+          },
+          "fastclick": {
+            "external": "FastClick",
+            "js": "https://gw.alipayobjects.com/as/g/luna-component/luna-fastclick/0.3.1/index.js"
+          }
+        }
+      }],
+      [
+        "env"
+      ]
+    ]
+  },
+  "dependencies": {
+    "@ali/kylin-framework": "./kylin_modules/_ali_kylin-framework",
+    "@alipay/alipayjsapi": "./kylin_modules/_alipay_alipayjsapi",
+    "@alipay/antui-vue": "./kylin_modules/_alipay_antui-vue",
+    "babel-runtime": "^6.25.0",
+    "v-verify": "^1.1.0",
+    "acorn": "5.7.3"
+  },
+  "devDependencies": {
+    "@ali/kylin-plugin-resource": "./kylin_modules/_ali_kylin-plugin-resource",
+    "@ali/kylin-plugin-env": "./kylin_modules/_ali_kylin-plugin-env",
+    "@ali/kylin-plugin-vue": "./kylin_modules/_ali_kylin-plugin-vue",
+    "@ali/kylin-build": "./kylin_modules/_ali_kylin-build",
+    "@ali/kylin-cli": "./kylin_modules/_ali_kylin-cli",
+    "babel-eslint": "^7.1.1",
+    "eslint": "~3.5.0",
+    "eslint-config-standard": "~6.0.1",
+    "eslint-plugin-jsx": "^0.0.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
+    "eslint-plugin-vue": "^2.0.1",
+    "rimraf": "^2.6.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
+}

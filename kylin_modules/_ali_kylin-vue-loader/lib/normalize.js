@@ -1,0 +1,1 @@
+var IS_TEST=!!process.env.VUE_LOADER_TEST,fs=require("fs"),path=require("path");exports.lib=function(e){return path.resolve(__dirname,e)},exports.dep=function(e){if(IS_TEST)return e;try{return require.resolve(e)}catch(e){}return fs.existsSync(path.resolve(__dirname,"../node_modules",e))?"@ali/kylin-vue-loader/node_modules/"+e:e};

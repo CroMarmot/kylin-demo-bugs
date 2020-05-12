@@ -1,0 +1,1 @@
+"use strict";function loadPlugin(n,o){if("undefined"!=typeof window){var i=window.__kylin_plugin_browser_func_arr__||[];"function"==typeof i.forEach&&i.forEach(function(i){"function"==typeof i&&i.call(null,n,o)})}}exports.__esModule=!0,exports.loadPlugin=loadPlugin;

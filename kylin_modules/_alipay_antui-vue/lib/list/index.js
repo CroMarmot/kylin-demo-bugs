@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _list=require('./list.vue');var _list2=_interopRequireDefault(_list);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_list2.default;

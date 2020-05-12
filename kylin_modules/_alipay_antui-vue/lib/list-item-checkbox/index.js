@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _listItemCheckbox=require('./list-item-checkbox.vue');var _listItemCheckbox2=_interopRequireDefault(_listItemCheckbox);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');{require('@alipay/antui/dist/dpl/icon/form.css')}exports.default=_listItemCheckbox2.default;

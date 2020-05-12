@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _checkbox=require('./checkbox.vue');var _checkbox2=_interopRequireDefault(_checkbox);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_checkbox2.default;

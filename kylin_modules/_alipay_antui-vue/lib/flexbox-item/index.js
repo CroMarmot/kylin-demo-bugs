@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _flexboxItem=require('./flexbox-item.vue');var _flexboxItem2=_interopRequireDefault(_flexboxItem);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_flexboxItem2.default;

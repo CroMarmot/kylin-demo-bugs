@@ -1,0 +1,1 @@
+var path=require("path"),parse=require("./parser"),loaderUtils=require("loader-utils");module.exports=function(e){this.cacheable();var r=loaderUtils.getOptions(this)||{},a=path.basename(this.resourcePath),t=parse(e,a,this.sourceMap)[r.type];Array.isArray(t)&&(t=t[r.index]),this.callback(null,t.content,t.map)};

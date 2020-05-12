@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _tabPanelItem=require('./tab-panel-item.vue');var _tabPanelItem2=_interopRequireDefault(_tabPanelItem);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_tabPanelItem2.default;

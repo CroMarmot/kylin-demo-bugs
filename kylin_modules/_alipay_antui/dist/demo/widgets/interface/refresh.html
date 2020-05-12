@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>下拉刷新</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+    <div class="demo-header">on/stopPullDownRefresh</div>
+
+    <div class="demo-content">
+        <div class="am-list-refresh" style="width:100%;text-align:center;color:#888;margin:.3rem 0 1.5rem;">
+            下滑即可刷新
+        </div>
+        <div class="single-demo-button" style="margin: .15rem .15rem .3rem;">
+            <button type="button" class="am-button white J-stop-refresh">停止下拉刷新</button>
+        </div>
+    </div>
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+  ;$(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+    var isStop = false;
+
+    if (isInAlipay) {
+        document.addEventListener('firePullToRefresh', function(e) {
+            if (isStop) {
+                e.preventDefault();
+                AlipayJSBridge.call('restorePullToRefresh');
+                isStop = false;
+            };
+        }, false);
+    } 
+
+    $(".J-stop-refresh").click(function(){
+        isStop = true;
+    })
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"use strict";function nunjucksFunctionLoader(e){return this.cacheable&&this.cacheable(),`\n  module.exports = function nunjucksFunctionWrap(templateParams) {\n    return ${JSON.stringify(e)};\n  }\n  `}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=nunjucksFunctionLoader,module.exports=exports.default;

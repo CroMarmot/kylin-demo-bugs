@@ -1,0 +1,1 @@
+"use strict";require("eventsource-polyfill");var hotClient=require("webpack-hot-middleware/client?noInfo=false");hotClient.subscribe(function(e){"reload"===e.action&&window.location.reload()});

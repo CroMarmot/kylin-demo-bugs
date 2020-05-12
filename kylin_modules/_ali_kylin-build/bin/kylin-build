@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var packageVersion = require('../package').version;
+var request = require('npm-request');
+var hint = require('../lib/utils/index.js').hint;
+var chalk = require('chalk');
+
+function checkUpdate(cb){
+  request({
+    method  : 'get',
+    path    : '@ali/kylin-build/latest',
+    timeout : 500
+  }, {registry: "http://registry.npm.alibaba-inc.com"}, function (err, data) {
+    if (err) {
+      // if error, ignore check
+      hint.error('[BUILD]', '版本检查失败');
+      hint.error('[BUILD]', err.message);
+      return cb();
+    }
+    var latestVersion = data.version || data["dist-tags"].latest;
+    if (latestVersion && packageVersion !== latestVersion) {
+      hint.warn('[BUILD]',
+        '最新版本: ' + latestVersion + ' , 本地版本: ' + packageVersion )
+      hint.warn('[BUILD]',
+        '执行 ' + chalk.yellow('tnpm install @ali/kylin-build -g') + ' 以更新');
+
+      setTimeout(function () {
+        cb();
+      }, 10);
+    } else {
+      hint.success('[CLI]', '已是最新版本 '+ latestVersion)
+      cb();
+    }
+  });
+}
+
+function run() {
+  require('../lib/build/index.js');
+}
+
+checkUpdate(run);

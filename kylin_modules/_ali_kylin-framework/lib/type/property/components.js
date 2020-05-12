@@ -1,0 +1,1 @@
+"use strict";exports.__esModule=!0,exports.processor=processor,exports.decorator=decorator;var propertyKey=exports.propertyKey="components",prototypeKey=exports.prototypeKey="$$Components";function processor(o,e,r){r.components=o.$$Components}function decorator(o,e,r){o.$$Components=r.initializer(),delete o[e]}

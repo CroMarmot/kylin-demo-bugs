@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Carousel</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="https://as.alipayobjects.com/g/component/swiper/3.2.7/swiper.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/widget/carousel.css" media="all">
+</head>
+<body ontouchstart="">
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+    <div class="demo-header">Carousel</div>
+
+    <div class="demo-content">
+        <div class="swiper-container am-carousel demo-swiper" id="j-swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">A1</div>
+                <div class="swiper-slide">A2</div>
+                <div class="swiper-slide">A3</div>
+                <div class="swiper-slide">A4</div>
+                <div class="swiper-slide">A5</div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="swiper-container am-carousel am-sp-white demo-swiper" id="j-swiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">B1</div>
+                <div class="swiper-slide">B2</div>
+                <div class="swiper-slide">B3</div>
+                <div class="swiper-slide">B4</div>
+                <div class="swiper-slide">B5</div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+</div>
+
+
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+<script charset="utf-8" src="https://as.alipayobjects.com/g/component/swiper/3.2.7/swiper.min.js"></script>
+
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+ ;$(function () {
+    var mySwiper1 = new Swiper ('#j-swiper1', {
+        // 如果需要分页器
+        pagination: '#j-swiper1 .swiper-pagination',
+        loop: true,
+        initialSlide: 2
+    });
+
+    var mySwiper2 = new Swiper ('#j-swiper2', {
+        // 如果需要分页器
+        pagination: '#j-swiper2 .swiper-pagination',
+        initialSlide: 2
+    });
+    
+  })
+</script>
+
+</body>
+</html>

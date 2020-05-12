@@ -1,0 +1,40 @@
+{
+    "name": "@alipay/luna-mock-webpack-config",
+    "version": "0.1.7",
+    "author": "简钰 <jianyu.lxd@alibaba-inc.com>",
+    "description": "luna-mock 的 webpack 推荐配置",
+    "keywords": [
+        "luna",
+        "luna-mock"
+    ],
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.alipay-inc.com:luna/luna-mock-webpack-config.git"
+    },
+    "scripts": {
+        "dev": "rm -rf lib && babel src --out-dir lib --watch --copy-files",
+        "build": "rm -rf lib && babel src --out-dir lib --copy-files",
+        "demo": "webpack-dev-server --config demo/webpack.config.js --devtool source-map --inline --hot --open --host 0.0.0.0",
+        "lint": "eslint ./src/ --ext js",
+        "lint:fix": "eslint --fix ./src/ --ext js",
+        "ci": "npm run lint"
+    },
+    "devDependencies": {
+        "@ali/babel-preset-es2015-nebula": "^6.22.7",
+        "@alipay/luna-mock-webpack-plugin": "^0.1.3",
+        "babel-cli": "^6.7.5",
+        "eslint": "~3.5.0",
+        "eslint-config-standard": "~6.0.1",
+        "eslint-plugin-promise": "~3.4.0",
+        "eslint-plugin-standard": "~2.0.1",
+        "webpack": "^1.13.1",
+        "webpack-dev-server": "1.14.1"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npm.alibaba-inc.com"
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>成员管理－默认</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/uwmegRFFioXMpolfnQis.css" />
+
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/widget/member-manage.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="am-member-manage">
+    <ul class="am-member-list">
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="微微"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除微微"></a>
+            </div>
+            <div class="am-member-info">微微</div>
+        </li>
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="微微"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除微微"></a>
+            </div>
+            <div class="am-member-info">微微</div>
+        </li>
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="微微"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除微微"></a>
+            </div>
+            <div class="am-member-info">微微</div>
+        </li>
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="微微"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除微微"></a>
+            </div>
+            <div class="am-member-info">微微</div>
+        </li>
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="笑笑"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除笑笑"></a>
+            </div>
+            <div class="am-member-info">笑笑</div>
+        </li>
+        <li class="am-member-item">
+            <div class="am-member-img-wrap">
+                <img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display='none'" title="小仙"/>
+                <a class="am-member-delete-icon" role="button" aria-label="删除小仙"></a>
+            </div>
+            <div class="am-member-info">小仙</div>
+        </li>
+
+        <li class="am-member-btn"><a class="am-member-add" role="button" aria-label="添加成员"></a></li>
+        <li class="am-member-btn"><a class="am-member-delete" role="button" aria-label="删除成员"></a></li>
+    </ul>
+    <div class="am-member-footer">把通讯录的某个朋友放到该列表，他（她）将不能查看你公开的动态</div>
+</div>
+
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="https://os.alipayobjects.com/rmsportal/EKtaVvHrUynCHVtNYmhn.js"></script>
+<script>
+  $(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+    var selectedClass = 'am-filter-item-selected';
+
+    $('.am-member-add').on('click', function(e) {
+      var el = $(this);
+      var htmlstr = '<li class="am-member-item">'
+        + '<div class="am-member-img-wrap">'
+        + '<img class="am-member-head-img" src="http://tfs.stable.alipay.net/images/partner/T1WBtXXbFbXXXXXXXX_160X160" onerror="this.style.display=\'none\'" title="新添加"/>'
+        + '<a class="am-member-delete-icon" role="button" aria-label="新添加"></a>'
+        + '</div>'
+        + '<div class="am-member-info">新添加</div>'
+        + '</li>';
+
+      $(htmlstr).insertBefore(el.parent());
+    });
+
+    $('.am-member-delete').on('click', function(e) {
+      var members = $(this).parents('.am-member-manage').find('.am-member-delete-icon');
+      members.each(function(_, el){
+        $(el).addClass('show');
+      });
+    });
+
+    $(document).on('click', function(e) {
+      var el = $(e.target);
+      if (!el.hasClass('am-member-delete') && !el.hasClass('am-member-delete-icon')) {
+        $('.am-member-delete-icon').removeClass('show');
+      }
+    });
+
+    $(document).on('click', '.am-member-delete-icon', function() {
+      var el = $(this);
+      el.parents('.am-member-item').remove(true);
+    });
+  });
+</script>
+
+</body>
+</html>

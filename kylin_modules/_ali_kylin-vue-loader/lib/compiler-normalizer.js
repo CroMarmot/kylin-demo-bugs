@@ -1,0 +1,1 @@
+var resolve=require("resolve"),modulePath=function(){var e=process.cwd();try{return resolve.sync("vue-template-compiler",{basedir:e})}catch(e){if("MODULE_NOT_FOUND"!==e.code)throw e;try{return require.resolve("vue-template-compiler")}catch(e){throw e}}}();module.exports=require(modulePath);

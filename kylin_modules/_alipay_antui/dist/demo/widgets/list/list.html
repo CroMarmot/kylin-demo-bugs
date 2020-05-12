@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>List</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/uwmegRFFioXMpolfnQis.css" />
+
+    <link rel="stylesheet" type="text/css" href="/g/antui/antui/10.0.20-beta01/rem/antui.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-header">列表组件</div>
+    <div class="demo-header-brief">List</div>
+
+    <div class="demo-content">
+        <div class="am-list">
+            <div class="am-list-header">单行表头纯文字</div>
+            <div class="am-list-body">
+                <a class="am-list-item">
+                    <div class="am-list-content">标签文本</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list">
+
+            <a class="am-list-item am-list-item-deletable">
+                <div class="am-list-content">删除列表</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+
+            <a class="am-list-item am-list-item-deletable">
+                <div class="am-list-content">删除列表</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+
+        <div class="am-list">
+
+            <a href="#" class="am-list-item">
+                <div class="am-list-content">标签文本</div>
+                <span class="am-bubble reddot"></span>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+
+            <a href="#" class="am-list-item">
+                <div class="am-list-content">标签文本</div>
+                <span class="am-bubble reddot"></span>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+
+        <div class="am-list">
+            <a href="#" class="am-list-item">
+                <div class="am-list-content">标签文本</div>
+                <div class="am-list-extra">详细信息</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+
+        <div class="am-list">
+            <div href="#" class="am-list-item">
+                <div class="am-list-content">标签文本</div>
+                <div><button class="am-button tiny">辅助按钮</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-content">
+
+        <div class="am-list">
+
+            <div class="am-list-header">内容超长的情况</div>
+            <div class="am-list-body">
+                <a class="am-list-item">
+                    <div class="am-list-content">标签文本</div>
+                    <div class="am-list-extra">辅助标签</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a class="am-list-item">
+                    <div class="am-list-content">标签文本</div>
+                    <div class="am-list-extra">辅助标签单行省略号显示显示</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list">
+            <a class="am-list-item">
+                <div class="am-list-content">标签文本内容尽量多往右边显示</div>
+                <div class="am-list-extra am-list-cell-noflex">辅助标签</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+            <a class="am-list-item">
+                <div class="am-list-content am-list-cell-noflex">标签文本</div>
+                <div class="am-list-extra">辅助标签内容尽量多往左边显示</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+
+        <div class="am-list">
+            <!--<a class="am-list-item">-->
+            <!--<div class="am-list-content am-list-cell-noellips">标签文本多行显示多行显示多行显示多行显示多行显示多行显示</div>-->
+            <!--<div class="am-list-extra am-list-cell-noflex">详细内容</div>-->
+            <!--<div class="am-list-arrow" aria-hidden="true"><span class="am-svgtest arrow horizontal"></span></div>-->
+            <!--</a>-->
+            <a class="am-list-item">
+                <div class="am-list-content am-list-cell-noflex">标题内容</div>
+                <div class="am-list-extra am-list-cell-noellips">辅助标签多行显示多行显示多行显示多行显示多行显示多行显示多行显示多行显示多行显示</div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="demo-content">
+        <div class="am-list am-list-twoline-text">
+            <div class="am-list-header">纯文本双行列表</div>
+            <div class="am-list-body">
+                <a class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本</div>
+                        <div class="am-list-brief">补充内容</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本</div>
+                        <div class="am-list-brief">补充内容</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本标题文本标题文本标题文本标题文本标题文本标题文本</div>
+                        <div class="am-list-brief">补充内容补充内容补充内容补充内容补充内容补充内容补充内容</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="demo-content">
+        <div class="am-list am-list-twoline-side">
+            <div class="am-list-header-sp">左右文字组合列表</div>
+            <div class="am-list-body">
+                <a class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                        <div class="am-list-brief">内容二</div>
+                    </div>
+                </a>
+                <a class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                        <div class="am-list-brief">内容二</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline-side">
+            <div class="am-list-header-sp">左右文字组合列表</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                        <div class="am-list-brief">内容二</div>
+                    </div>
+                </div>
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                        <div class="am-list-brief">内容二</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline-side">
+            <div class="am-list-header-sp">左右文字组合列表</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                    </div>
+                </div>
+                <div class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-twoline-side">
+            <div class="am-list-header-sp">左右文字组合列表</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                    </div>
+                </div>
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题一</div>
+                        <div class="am-list-brief">内容一</div>
+                    </div>
+                    <div class="am-list-extra">
+                        <div class="am-list-title">标题二</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-content">
+        <div class="am-list">
+            <div class="am-list-header">小图标＋单行文字（图片尺寸：58*58(ios), 72*72(android)）</div>
+            <div class="am-list-body ">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">标签文本</div>
+                </div>
+                <a class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">标签文本</div>
+                    <div class="am-list-extra">辅助标签</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline">
+            <div class="am-list-header">图标＋两行文字 (图片尺寸: 100*100(ios), 108*108(android))</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标签文本</div>
+                        <div class="am-list-brief">补充内容</div>
+                    </div>
+                </div>
+
+                <a href="#" class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本</div>
+                        <div class="am-list-brief">补充内容</div>
+                    </div>
+
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="">
+                    </div>
+                    <div class="am-list-content">
+                        <div class="am-list-title am-list-cell-twocolumn">
+                            <label class="am-flexbox-item">标签文本标签文本标签文本标签文本标签文本标签文本标签文本</label>
+                            <div class="am-list-right-brief">2016/12/31</div>
+                        </div>
+                        <div class="am-list-brief">补充内容补充内容补充内容补充内容补充内容补充内容补充内容补充内容补充内容</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline">
+            <div class="am-list-header">大图标＋多行文字 (图片尺寸: 120*120(ios), 144*144(android))</div>
+            <div class="am-list-body">
+                <a class="am-list-item am-list-moreline">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本</div>
+                        <div class="am-list-brief">描述信息默认显示一行，超出长默认显示省略号</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a class="am-list-item am-list-moreline">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题文本</div>
+                        <div class="am-list-brief am-list-cell-noellips">摘要信息，以简明扼要为主，但建议文字不易过长，通常不超过两行。</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="demo-content">
+
+        <div class="am-list">
+            <div class="am-list-header">右边露出图片或图标</div>
+            <div class="am-list-body ">
+                <a href="#" class="am-list-item">
+                    <div class="am-list-content">标题文本
+                    </div>
+                    <div class="am-list-thumb right"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a href="#" class="am-list-item">
+                    <div class="am-list-content">标题文本
+                    </div>
+                    <div class="am-list-thumb right"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline">
+            <a href="#" class="am-list-item ">
+                <div class="am-list-content">
+                    <div class="am-list-title">标题文本</div>
+                    <div class="am-list-brief">补充内容</div>
+                </div>
+                <div class="am-list-thumb right"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+            <a href="#" class="am-list-item">
+                <div class="am-list-content">
+                    <div class="am-list-title">标题文本</div>
+                    <div class="am-list-brief">补充内容</div>
+                </div>
+                <div class="am-list-thumb right"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="demo-content">
+        <div class="am-list am-list-users-sm">
+            <div class="am-list-header">联系人列表(尺寸: 72*72(ios), 96*96(android))</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://zos.alipayobjects.com/rmsportal/wMkOIiXzNqrSFSWYjDNe.png" alt=""></div>
+                    <div class="am-list-content">用户名</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-users">
+            <div class="am-list-header">联系人列表(尺寸: 100*100(ios), 108*108(android))</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://zos.alipayobjects.com/rmsportal/wMkOIiXzNqrSFSWYjDNe.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title am-list-cell-twocolumn">
+                            <label class="am-flexbox-item">用户列表</label>
+                            <div class="am-list-right-brief">12:31</div>
+                        </div>
+                        <div class="am-list-brief">摘要信息</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-users-lg">
+            <div class="am-list-header">联系人列表(大图)(尺寸: 120*120(ios), 144*144(android))</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://zos.alipayobjects.com/rmsportal/wMkOIiXzNqrSFSWYjDNe.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">用户名</div>
+                        <div class="am-list-brief">摘要信息</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="demo-content">-->
+    <!--&lt;!&ndash;<div class="demo-type-title">消息类</div>&ndash;&gt;-->
+    <!--<div class="am-list am-list-twoline">-->
+    <!--<div class="am-list-header">消息类</div>-->
+    <!--<div class="am-list-body">-->
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief twocolumn">-->
+    <!--<label class="am-flexbox-item">补充内容</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--<img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-twoline">-->
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief twocolumn">-->
+    <!--<label class="am-flexbox-item">补充内容</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--<img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief twocolumn">-->
+    <!--<label class="am-flexbox-item">补充内容</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--<img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt="">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-twoline">-->
+    <!--<div class="am-list-body">-->
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief">补充内容</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-twoline">-->
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief">-->
+    <!--<label class="am-flexbox-item">补充内容</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-item">-->
+    <!--<div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>-->
+    <!--<div class="am-list-content">-->
+    <!--<div class="am-list-title twocolumn">-->
+    <!--<label class="am-flexbox-item">标题文本</label>-->
+    <!--<div class="am-list-right-brief">-->
+    <!--文本-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-brief">-->
+    <!--<label class="am-flexbox-item">补充内容</label>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="demo-content">
+        <div class="am-list am-list-ptext">
+            <div class="am-list-header-sp">图文列表组合(图片尺寸: 120*120(ios), 180*180(android))</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+                <a class="am-list-item am-list-item-more">查看更多</a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-ptext">
+            <div class="am-list-header-sp">文字列表组合</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+
+                <div class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+                <a class="am-list-item am-list-item-more">查看更多</a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-ptext">
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-ptext">
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-ptext">
+            <div class="am-list-header-sp">文字列表</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-ptext">
+            <div class="am-list-header-sp">图文列表组合, 附加来源</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+
+                    <div class="am-list-content">
+                        <div class="am-list-title">标题</div>
+                        <div class="am-list-brief">“全球未来机场计划”是指未来游客在海外机场，通过支付宝使用航班提醒等服务。</div>
+                        <div class="am-list-sti">
+                            <span>来源 </span>
+                            <span>时间 </span>
+                            <span>| </span>
+                            <span>其他信息</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="demo-content">
+        <div class="am-list am-list-bank">
+            <div class="am-list-header">银行卡列表(圆图 72*72(ios), 108*108(ios))</div>
+            <div class="am-list-body">
+                <a class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://os.alipayobjects.com/rmsportal/OhSzVdRBnfwiuCK.png" alt=""></div>
+
+                    <div class="am-list-content">
+                        <div class="am-list-title">招商银行</div>
+                        <div class="am-list-brief">尾号7785</div>
+                    </div>
+
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="demo-content">-->
+    <!--&lt;!&ndash;<div class="demo-type-title">纯信息展示</div>&ndash;&gt;-->
+    <!--<div class="am-list am-list-info">-->
+    <!--<div class="am-list-header">纯信息展示</div>-->
+    <!--<div class="am-list-body">-->
+    <!--<div class="am-list-item oneline">-->
+    <!--<div class="am-list-content">标签文本标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class="am-list am-list-info">-->
+    <!--<a class="am-list-item oneline">-->
+    <!--<div class="am-list-content">标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--<div class="am-list-arrow" aria-hidden="true"><span class="am-svgtest arrow horizontal"></span></div>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-info">-->
+    <!--<a class="am-list-item">-->
+    <!--<div  class="am-list-item-part">-->
+    <!--<div class="am-list-content">标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--<div class="am-list-arrow" aria-hidden="true"><span class="am-svgtest arrow horizontal"></span></div>-->
+    <!--</div>-->
+    <!--<div class="am-list-item-part">-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-info">-->
+    <!--<div class="am-list-item">-->
+    <!--<div  class="am-list-item-part">-->
+    <!--<div class="am-list-content">标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--</div>-->
+    <!--<div class="am-list-item-part">-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="am-list am-list-info">-->
+    <!--<a class="am-list-item">-->
+    <!--<div class="am-list-item-part">-->
+    <!--<div class="am-list-content">标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本</div>-->
+    <!--<div class="am-list-arrow" aria-hidden="true"><span class="am-svgtest arrow horizontal"></span></div>-->
+    <!--</div>-->
+    <!--<div class="am-list-item-part">-->
+    <!--<div class="am-list-content">标签文本</div>-->
+    <!--<div class="am-list-extra">标签文本标签文本标签文本标签文本</div>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+
+</div>
+
+
+</body>
+</html>

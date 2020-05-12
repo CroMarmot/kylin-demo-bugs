@@ -1,0 +1,53 @@
+{
+    "name": "@ali/vue-component-swiper",
+    "version": "0.1.10",
+    "description": "",
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+        "dev": "kylin build -t component --no-prod --watch --no-compress",
+        "build": "rm -rf ./lib/ && kylin build -t component",
+        "beta": "tnpm publish --tag beta",
+        "lint": "eslint ./src/ --ext js --ext vue",
+        "lint:fix": "eslint --fix ./src/ --ext js --ext vue",
+        "test:snapshot": "kylin-test --action snapshot"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.alipay-inc.com:vue-component/custom-component.git"
+    },
+    "main": "lib/index.js",
+    "files": [
+        "lib",
+        "src/demo/*",
+        "src/readme.md"
+    ],
+    "kylinComponent": {
+        "sourceDir": "./src",
+        "buildDir": "./lib"
+    },
+    "dependencies": {
+        "babel-runtime": "6"
+    },
+    "devDependencies": {
+        "@ali/kylin-cli": "0.1.x",
+        "@ali/kylin-test": "0.0.3",
+        "babel-eslint": "^7.1.1",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "eslint": "~3.5.0",
+        "eslint-config-standard": "~6.0.1",
+        "eslint-plugin-jsx": "^0.0.2",
+        "eslint-plugin-promise": "^3.5.0",
+        "eslint-plugin-standard": "^2.1.1",
+        "eslint-plugin-vue": "^2.0.1"
+    },
+    "engines": {
+        "node": ">= 6.0.0",
+        "npm": ">= 3.0.0"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npm.alibaba-inc.com"
+    }
+}

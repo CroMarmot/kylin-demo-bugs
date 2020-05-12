@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var co = require('co');
+program
+  .usage('[template-name] <page-name>');
+
+program.on('--help', function () {
+  console.log('  Examples:')
+  console.log('   # kylin init-page hello')
+});
+
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 1) return program.help()
+}
+help();
+program.cwd = process.cwd();
+
+
+var init = require('../lib/init-page/index.js');
+
+co(function *() {
+  yield init(program)
+}).catch(function (err) {
+  console.error(err);
+});

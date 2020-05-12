@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Slider</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/widget/slider.css" media="all" />
+
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+
+    <div class="demo-header">Slider</div>
+
+    <div class="demo-content">
+        <div class="am-list">
+          <div class="am-slider-box">
+            <div class="am-slider-bg"></div>
+            <div class="am-slider-track"></div>
+          </div>
+        </div>
+        <div class="am-list">
+          <div class="am-slider-box">
+            <div class="am-slider-bg am-slider-other-bg"></div>
+            <div class="am-slider-track am-slider-other-track"></div>
+            <div class="am-slider-tips">60</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+  $(function () {
+    var track = $(".am-slider-track");
+    var oW;
+
+    track.forEach(function(slider) {
+       slider.addEventListener("touchstart", function(e) {
+           var touches = e.touches[0];
+           var _this = this;
+
+           oW = touches.clientX - _this.offsetLeft;
+
+            _this.addEventListener("touchmove", function(e) {
+               var touches = e.touches[0];
+               var oLeft = touches.clientX - oW;
+               var percentage = parseInt((oLeft/272)*100);
+
+               if(oLeft < 0) {
+                    oLeft = 0;
+                    percentage = 0;
+               }else if(oLeft > 272) {
+                    oLeft = 272;
+                    percentage = 100;
+               }
+
+               $(_this).parent().find(".am-slider-bg").css("width",oLeft/100+ 'rem');
+               $(_this).css("left",oLeft/100 + 'rem');
+               if (!!$(_this).parent().find(".am-slider-tips")) {
+                    $(_this).parent().find(".am-slider-tips").html(percentage);
+                };
+            },false);
+               
+            _this.addEventListener("touchend",function() {
+               _this.removeEventListener("touchmove",defaultEvent,false);
+            },false);
+
+        },false)         
+    });
+        
+    //阻止页面的滑动默认事件
+    document.addEventListener("touchmove",defaultEvent,false);  
+
+    function defaultEvent(e) {
+       e.preventDefault();
+    }
+   
+  });
+</script>
+
+</body>
+</html>

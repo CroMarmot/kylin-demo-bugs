@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Lists</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+    <div class="demo-header">Lists</div>
+
+    <div class="demo-content">
+
+        <div class="am-list">
+            <div class="am-list-header">带图片小图列表项</div>
+            <div class="am-list-body ">
+                <div class="am-list-item">
+                    <div class="am-list-thumb"><img src="https://gw.alipayobjects.com/zos/rmsportal/KXDIRejMrRdKlSEcLseB.png" alt=""></div>
+                    <div class="am-list-content">标题文字</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list">
+            <div class="am-list-header">带图片小图、跳转的列表项</div>
+            <div class="am-list-body ">
+                <a href='javascript:void(0)' class="am-list-item am-list-item-indent line-thumb">
+                    <div class="am-list-thumb"><img src="https://gw.alipayobjects.com/zos/rmsportal/KXDIRejMrRdKlSEcLseB.png" alt=""></div>
+                    <div class="am-list-content">标题文字</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a href="javascript:void(0)" class="am-list-item am-list-item-indent line-thumb">
+                    <div class="am-list-thumb"><img src="https://gw.alipayobjects.com/zos/rmsportal/KXDIRejMrRdKlSEcLseB.png" alt=""></div>
+                    <div class="am-list-content">标题文字</div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+            </div>
+        </div>
+
+        <div class="am-list am-list-twoline-text">
+            <div class="am-list-header">带描述、跳转列表项</div>
+            <div class="am-list-body">
+                <a href="javascript:void(0)" class="am-list-item am-list-item-indent line-thumb">
+                    <div class="am-list-thumb"><img src="https://gw.alipayobjects.com/zos/rmsportal/KXDIRejMrRdKlSEcLseB.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">双行列表</div>
+                        <div class="am-list-brief">表述信息</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+                <a href="javascript:void(0)" class="am-list-item am-list-item-indent line-thumb">
+                    <div class="am-list-thumb"><img src="https://gw.alipayobjects.com/zos/rmsportal/KXDIRejMrRdKlSEcLseB.png" alt=""></div>
+                    <div class="am-list-content">
+                        <div class="am-list-title">双行列表</div>
+                        <div class="am-list-brief">表述信息</div>
+                    </div>
+                    <div class="am-list-arrow" aria-hidden="true"><span class="am-icon arrow horizontal"></span></div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script>
+;$(function(){
+    var common = function(){
+
+    }
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+
+    if (isInAlipay) {
+      common();
+    }
+}) 
+</script>
+</body>
+</html>

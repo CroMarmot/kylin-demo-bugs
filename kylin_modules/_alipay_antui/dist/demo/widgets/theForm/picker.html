@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Picker</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+
+    <div class="demo-header">Picker</div>
+
+    <div class="demo-content">
+        <div class="am-list am-list-form">
+            <div class="am-list-header">时间选择器</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-label">当前选择</div>
+                    <div class="am-list-control J-time">
+                        12:00
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">日期选择器</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-label">当前选择</div>
+                    <div class="am-list-control J-date">
+                        2016-12-15
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">单项选择器</div>
+            <div class="am-list-body">
+                <div class="am-list-item">
+                    <div class="am-list-label">当前选择</div>
+                    <div class="am-list-control J-certificate">
+                        证件类型
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="/as/g/antui/antui/10.1.10/antui.js"></script>
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+  ;$(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+    if (isInAlipay) {
+        $('.J-time').click(function(){
+            var _this = this;
+            AlipayJSBridge.call('datePicker',{
+              mode:0,
+            }, function(e){
+              if (!!e.date) {
+                var timeList = e.date.split(':');
+                $(_this).html(timeList[0] + ":" +timeList[1]);
+              };
+            })
+        });
+        
+        $('.J-date').click(function(){
+            var _this = this;
+            AlipayJSBridge.call('datePicker',{
+              beginDate: '2016-10-10',
+              minDate: '2016-10-9',
+              maxDate: '2017-10-9',
+              mode:1,
+            }, function(e){
+              if (!!e.date) {
+                if ( e.date.indexOf("/") >= 0 ) {
+                    var dateList = e.date.split('/');
+                    $(_this).html(dateList[0] + "年" +dateList[1]+ "月" +dateList[2]+"日");
+                }else if( e.date.indexOf("-") >= 0){
+                    var dateList = e.date.split('-');
+                    $(_this).html(dateList[0] + "年" +dateList[1]+ "月" +dateList[2]+"日");
+                }else{
+                     $(_this).html(e.date);
+                };
+              };
+            })
+        })
+        
+        $('.J-certificate').click(function(){
+            var _this = this;
+             AlipayJSBridge.call('beehiveOptionsPicker', {
+              optionsOne:["居民户口薄","身份证","临时身份证","军官证"],
+            }, function(result) {
+              if (!!result.selectedOneOption) {
+                $(_this).html(result.selectedOneOption)
+              };
+            });
+        })
+    }
+   
+  });
+</script>
+
+</body>
+</html>

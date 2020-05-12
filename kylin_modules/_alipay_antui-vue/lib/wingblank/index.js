@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _wingblank=require('./wingblank.vue');var _wingblank2=_interopRequireDefault(_wingblank);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_wingblank2.default;

@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _button=require('./button.vue');var _button2=_interopRequireDefault(_button);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_button2.default;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>录音</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+    <div class="demo-header">star/stoRecord</div>
+
+    <div class="demo-content">
+        <div class="single-demo-button" style="margin: 0 .15rem .3rem;">
+            <button type="button" class="am-button white J-starRecord" style="margin:.1rem 0;">按住开始录音</button>
+            <button type="button" class="am-button white J-stopRecord">上划取消录音</button>
+        </div>
+    </div>
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="/as/g/antui/antui/10.1.10/antui.js"></script>
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+
+ $(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+
+    if (isInAlipay) { 
+
+        $(".J-starRecord").click(function(e){
+            var e = e || window.event;
+            e.stopPropagation();
+            AlipayJSBridge.call('startAudioRecord', {
+              maxRecordTime: 60, //  最大录音时长，默认60s
+              minRecordTime: 1, // 最小录音时长，默认1s
+              business: 'apm-h5', // 业务标识
+            }, function (result) {
+                console.log('startAudioRecord: '+JSON.stringify(result));
+                var localId = result.identifier;
+            });
+        });
+        $(".J-stopRecord").click(function(){
+            AlipayJSBridge.call('stopAudioRecord', {}, function (result) {
+                console.log('stopAudioRecord: '+JSON.stringify(result));
+            });
+        });
+
+        var startX = 0 ,startY = 0 ,moveEndX = 0 ,moveEndY = 0 ,X = 0 ,Y = 0;
+        $("body").on("touchstart", function(e) {
+            var e = e || window.event;
+            startX = e.pageX,
+            startY = e.pageY;
+        });
+
+        $("body").on("touchmove", function(e) {
+            var e = e || window.event;
+            e.preventDefault();
+            moveEndX = e.pageX,
+            moveEndY = e.pageY,
+            X = moveEndX - startX,
+            Y = moveEndY - startY;
+            if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
+                AlipayJSBridge.call('stopAudioRecord', {}, function (result) {
+                    console.log('stopAudioRecord: '+JSON.stringify(result));
+                });
+            }
+           
+        });
+    }
+
+  });
+</script>
+
+</body>
+</html>

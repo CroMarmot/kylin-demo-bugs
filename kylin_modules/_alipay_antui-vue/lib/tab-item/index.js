@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _tabItem=require('./tab-item.vue');var _tabItem2=_interopRequireDefault(_tabItem);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');exports.default=_tabItem2.default;

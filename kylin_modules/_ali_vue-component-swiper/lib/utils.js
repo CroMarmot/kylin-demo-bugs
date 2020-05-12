@@ -1,0 +1,1 @@
+"use strict";function transformValueUnit(e){var t=typeof e,a={value:void 0,unit:"px"};if("number"===t)a.value=isNaN(e)?void 0:e;else if("string"===t){var r=e.match(/[A-Za-z]+$/);a.unit=r&&r[0]||"px";var i=parseFloat(e);a.value=isNaN(i)?void 0:i}return a}Object.defineProperty(exports,"__esModule",{value:!0}),exports.transformValueUnit=transformValueUnit;

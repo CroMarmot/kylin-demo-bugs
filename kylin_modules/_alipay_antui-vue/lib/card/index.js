@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _card=require('./card.vue');var _card2=_interopRequireDefault(_card);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');{require('@alipay/antui/dist/dpl/widget/card.css')}exports.default=_card2.default;

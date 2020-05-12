@@ -1,0 +1,1 @@
+"use strict";module.exports={"object/assign":!0,"object/set-prototype-of":!0};

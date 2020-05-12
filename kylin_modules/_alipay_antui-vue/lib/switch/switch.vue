@@ -1,0 +1,14 @@
+<template>
+<div class="am-switch" :class="cClass">
+  <input ref="input" type="checkbox" class="am-switch-checkbox" :checked="innerValue" @click="onClick" :disabled="disabled">
+  <label class="am-switch-label" :class="innerClass">
+      <div class="am-switch-inner"></div>
+      <div class="am-switch-switch"></div>
+  </label>
+</div>
+</template>
+<style scoped>.am-switch.disabled{opacity:0.3}.am-switch.platform-android{width:70px;height:22px}.am-switch.platform-android .am-switch-checkbox{width:70px;height:22px}.am-switch.platform-android .am-switch-inner:before,
+.am-switch.platform-android .am-switch-inner:after{height:22px;border:none 0;-webkit-border-radius:5px;border-radius:5px}.am-switch.platform-android .am-switch-inner:before{border:1px solid #108ee9;background:#108ee9}.am-switch.platform-android .am-switch-inner:after{border:1px solid #A7AAA6;background:#A7AAA6}.am-switch.platform-android .am-switch-switch{-webkit-border-radius:4px;border-radius:4px;width:34px;height:20px;background:#fff;background-image:none;border:none 0;-webkit-box-shadow:none;box-shadow:none}.am-switch.platform-android .am-switch-checkbox:checked + .am-switch-label .am-switch-inner{margin-left:1px}.am-switch.platform-android .am-switch-label.checked .am-switch-switch{-webkit-transform:translateX(34px)}.am-switch.platform-android .am-switch-label.not-checked .am-switch-switch{-webkit-transform:translateX(0)}.am-switch .am-switch-label .am-switch-inner{margin-left:0}.am-switch .am-switch-inner:before{-webkit-transition:all linear 0.2s;transition:all linear 0.2s}.am-switch .am-switch-inner:after{margin-left:-50%}.am-switch .am-switch-inner:after,
+.am-switch .am-switch-switch{-webkit-transition:all linear 0.2s;transition:all linear 0.2s}.am-switch .am-switch-label.not-checked .am-switch-inner:after{-webkit-transform:scale(1);transform:scale(1)}.am-switch .am-switch-label.checked .am-switch-inner:after{-webkit-transform:scale(0);transform:scale(0)}</style>
+<script type="text/javascript" generated>'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _platform=require('../__utils/platform');exports.default={name:'Switch',props:{platform:{type:String,default:_platform.os},value:{type:Boolean,default:undefined},disabled:Boolean},data:function data(){return{innerValue:this.value}},watch:{value:function value(b){this.innerValue=b}},methods:{onClick:function onClick(f){var a=this;var b=typeof this.value==='boolean';if(b){f.preventDefault();var c=!this.innerValue;setTimeout(function(){a.$emit('input',c)},0)}else{var d=!!f.target.checked;this.innerValue=d;this.$emit('input',d)}}},computed:{innerClass:function innerClass(){return this.innerValue?'checked':'not-checked'},cClass:function cClass(){var b='';b+=this.disabled?'disabled':'';b+=this.platform==='android'?' platform-android':'';return b}}};</script>
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Input</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/icon/form.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title" style="position:static;"></div>
+
+    <div class="demo-header">Input</div>
+
+    <div class="demo-content">
+        <!--<div class="demo-type-title">表单</div>-->
+        <div class="am-list am-list-form">
+            <div class="am-list-header">Input自动聚焦</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="" autofocus="autofocus" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-form">
+            <div class="am-list-header">Input最大输入长度</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="text" placeholder="最大输入长度为10" value=""  min="0" max="10"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">输入数字的Input</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="number" placeholder="这是一个数字输入框" value="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">输入密码的Input</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="password" placeholder="这是一个密码输入框" value="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">输入小数点的Input</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="text" placeholder="带小数点的数字键盘" value=""  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">输入身份证的Input</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="number" placeholder="身份证输入键盘" value=""  />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-list am-list-form">
+            <div class="am-list-header">输入报错</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-list-item-error am-input-autoclear">
+                    <div class="am-list-control">
+                        <input type="text" placeholder="" value="身份证输入键盘">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                    <div class="am-list-thumb right"><i class="am-icon form am-error-tip" data-error="最长文案不超过15个字符"></i></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="am-list am-list-form">
+            <div class="am-list-header">标题超长</div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label">双项输入</div>
+                <div class="am-list-control">
+                    <input type="text" placeholder="暗提示" value="">
+                    <input type="hidden" placeholder="" value="">
+                </div>
+                <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+            </div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label">最长可六个字</div>
+                <div class="am-list-control">
+                    <input type="text" placeholder="暗提示右移与标题间隔10px" value="">
+                    <input type="hidden" placeholder="" value="">
+                </div>
+                <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-form">
+            <div class="am-list-header">单项输入</div>
+            <div class="am-list-item am-input-autoclear">
+                <div class="am-list-label">单项输入</div>
+                <div class="am-list-control">
+                    <input type="text" placeholder="暗提示" value="">
+                    <input type="hidden" placeholder="" value="">
+                </div>
+                <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-form">
+            <div class="am-list-header">多项输入</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">多项输入</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">多项输入</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">多项输入</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="am-list am-list-form">
+            <div class="am-list-header">组合输入</div>
+            <div class="am-list-body">
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">姓名</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="请输入真实姓名" value="">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">手机号</div>
+                    <div class="am-list-control">
+                        <input type="number" placeholder="请输入手机号" value="">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                    <div class="am-list-button">
+                        <button type="button">发送校验码</button>
+                    </div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">日期</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="2016年12月15日">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+                <div class="am-list-item am-input-autoclear">
+                    <div class="am-list-label">时间</div>
+                    <div class="am-list-control">
+                        <input type="text" placeholder="暗提示" value="2016年12月15日 19:35">
+                    </div>
+                    <div class="am-list-clear"><i class="am-icon-clear am-icon"></i></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="/as/g/antui/antui/10.1.10/antui.js"></script>
+<script>
+  ;$(function () {
+
+    if (window.amAutoClear) {
+        window.amAutoClear();
+        window.amInputErrorTip();
+    }
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+"use strict";exports.__esModule=!0,exports.processor=processor,exports.decorator=decorator;var exceptNames=exports.exceptNames={name:!0,filters:!0};function processor(e,o,r){var s=o.slice(2),t=e[o];r[s]&&!exceptNames[s]&&console&&console.warn&&console.warn("Property ["+s+"] will override options["+s+"]"),r[s]=t}function decorator(e,o,r){e["$$"+o]=r.initializer(),delete e[o]}

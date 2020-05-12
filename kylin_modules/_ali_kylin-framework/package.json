@@ -1,0 +1,87 @@
+{
+    "name": "@ali/kylin-framework",
+    "version": "0.1.10-open",
+    "main": "lib/index.js",
+    "module": "esm/index.js",
+    "description": "kylin framework",
+    "repository": {
+        "type": "git",
+        "url": "http://gitlab.alipay-inc.com/kylin/framework.git"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "registry": "http://registry.npm.alibaba-inc.com"
+    },
+    "scripts": {
+        "build": "tnpm run build:js",
+        "build:js": "babel src --out-dir lib --source-maps",
+        "dev": "tnpm run dev:js",
+        "dev:js": "babel src --out-dir lib --source-maps --watch",
+        "build-debug": "babel src --out-dir lib --source-maps inline",
+        "test": "tnpm run test:unit",
+        "test:unit": "cross-env BABEL_ENV=karma karma start test/karma/karma.conf.js --single-run",
+        "test:debug": "cross-env BABEL_ENV=karma karma start test/karma/karma.conf.js --single-run --debug",
+        "docs": "rimraf docs && jsdoc README.md src -r -d docs -t node_modules/docdash",
+        "alpha": "tnpm publish --tag alpha",
+        "beta": "tnpm publish --tag beta",
+        "open": "tnpm publish --tag open",
+        "lint": "eslint src/",
+        "lint:fix": "eslint --fix src/"
+    },
+    "dependencies": {
+        "babel-runtime": "^6.26.0",
+        "vuex": "2.1.2"
+    },
+    "peerDependencies": {
+        "vue": "^2.1.6"
+    },
+    "devDependencies": {
+        "@ali/babel-plugin-decorators-inject": "^6.22.2",
+        "@ali/babel-preset-es2015-nebula": "^6.22.2",
+        "babel-cli": "^6.0.0",
+        "babel-eslint": "^7.1.1",
+        "babel-loader": "^6.3.2",
+        "babel-plugin-istanbul": "^3.1.2",
+        "babel-plugin-syntax-jsx": "*",
+        "babel-plugin-transform-class-properties": "^6.23.0",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-plugin-transform-vue-jsx": "^3.3.0",
+        "babel-preset-latest": "^6.22.0",
+        "babel-preset-stage-0": "^6.22.0",
+        "babel-preset-stage-2": "^6.22.0",
+        "babel-runtime": "^6.23.0",
+        "chai": "^3.5.0",
+        "chromedriver": "^2.27.2",
+        "cross-env": "^3.1.4",
+        "cross-spawn": "^5.0.1",
+        "docdash": "^0.4.0",
+        "eslint": "~3.5.0",
+        "eslint-config-standard": "~6.0.1",
+        "eslint-plugin-promise": "^3.5.0",
+        "eslint-plugin-standard": "^2.1.1",
+        "function-bind": "^1.1.0",
+        "jsdoc": "^3.4.3",
+        "karma": "^1.4.1",
+        "karma-coverage": "^1.1.1",
+        "karma-mocha": "^1.3.0",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-sinon-chai": "^1.2.4",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-spec-reporter": "0.0.26",
+        "karma-webpack": "^2.0.2",
+        "mocha": "^3.2.0",
+        "nightwatch": "^0.9.12",
+        "phantomjs-prebuilt": "^2.1.14",
+        "rimraf": "^2.6.1",
+        "sinon": "^1.17.7",
+        "sinon-chai": "^2.8.0",
+        "vue": "^2.1.6",
+        "webpack": "^1.15.0"
+    },
+    "engines": {
+        "node": ">= 4.0.0",
+        "npm": ">= 3.0.0"
+    }
+}

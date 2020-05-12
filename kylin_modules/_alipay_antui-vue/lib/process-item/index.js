@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});var _processItem=require('./process-item.vue');var _processItem2=_interopRequireDefault(_processItem);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}require('../common');{require('@alipay/antui/dist/dpl/widget/process.css')}exports.default=_processItem2.default;

@@ -1,0 +1,1 @@
+"use strict";function getContext(){return require.context(__KYLIN_PLUGIN_LUNA_MOCK_WORKING_DIR__+"/jsapi/",!0,/\.js$/)}exports.context=getContext(),module.hot&&module.hot.accept(exports.context.id,function(){exports.context=getContext()});

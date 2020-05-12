@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+var request = require('npm-request');
+var packageVersion = require('../package').version;
+var hint = require('../lib/utils/index.js').hint;
+var chalk = require('chalk');
+// checkupdate
+
+function run() {
+  require('commander')
+    .version(packageVersion)
+    .usage('<command> [options]')
+    .command('init', 'init from a template')
+    .command('ls', 'list all template from kylin-group')
+    .command('init-page', 'init from page template')
+    .command('init-component', 'init from component template')
+    .command('build', 'buildtool')
+    .parse(process.argv)
+}
+
+run();

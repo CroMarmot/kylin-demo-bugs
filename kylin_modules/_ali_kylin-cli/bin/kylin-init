@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var co = require('co');
+program
+  .usage('[template-name] [dest]')
+  .option('-t, --template-path <p>', 'template local path');
+
+program.on('--help', function () {
+  console.log('  Examples:')
+  console.log('   # kylin init simple')
+  console.log('   # kylin init simple dest_directory')
+});
+
+function help () {
+  program.parse(process.argv)
+  if (program.args.length < 0) return program.help()
+}
+help();
+program.cwd = process.cwd();
+
+
+var init = require('../lib/init/index.js');
+
+co(function *() {
+  yield init(program)
+}).catch(function (err) {
+  console.error(err);
+});

@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+
+var resolve = require('resolve');
+var buildBinPath, buildPackagePath;
+var cwd = process.cwd();
+
+try {
+  buildBinPath = resolve.sync('@ali/kylin-build/lib/build/index.js', { basedir: cwd });
+  buildPackagePath = resolve.sync('@ali/kylin-build/package.json', { basedir: cwd });
+} catch(ex) {
+  buildBinPath = require.resolve('@ali/kylin-build/lib/build/index.js');
+  buildPackagePath = require.resolve('@ali/kylin-build/package.json');
+}
+
+var packageVersion = require(buildPackagePath).version;
+var request = require('npm-request');
+var hint = require('../lib/utils/index.js').hint;
+var chalk = require('chalk');
+
+function checkUpdate(cb){
+  request({
+    method  : 'get',
+    path    : '@ali/kylin-build/latest',
+    timeout : 500
+  }, {registry: "http://registry.npm.alibaba-inc.com"}, function (err, data) {
+    if (err) {
+      // if error, ignore check
+      hint.error('[kylin-build]', '版本检查失败', '本地版本 '+ packageVersion);
+      hint.error('[kylin-build]', err.message);
+      return cb();
+    }
+    var latestVersion = data.version || data["dist-tags"].latest;
+    if (latestVersion && packageVersion !== latestVersion) {
+      hint.warn('[kylin-build]',
+        '最新版本: ' + latestVersion + ' , 本地版本: ' + packageVersion )
+      hint.warn('[kylin-build]',
+        '执行 ' + chalk.yellow('tnpm install @ali/kylin-build -g') + ' 以更新');
+
+      setTimeout(function () {
+        cb();
+      }, 10);
+    } else {
+      hint.success('[kylin-build]', '已是最新版本 '+ latestVersion)
+      cb();
+    }
+  });
+}
+
+function run() {
+  // 先resolve一下如果能相对于 cwd resolve 到，就不用这个
+  require(buildBinPath);
+
+}
+
+run();

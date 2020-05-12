@@ -1,0 +1,1 @@
+"use strict";function CleanEmptyChunkPlugin(){}CleanEmptyChunkPlugin.prototype.apply=function(n){n.plugin("emit",function(n,t){n.chunks.forEach(function(t){t.files.forEach(function(t){delete n.assets[t]})}),t()})},module.exports=CleanEmptyChunkPlugin;

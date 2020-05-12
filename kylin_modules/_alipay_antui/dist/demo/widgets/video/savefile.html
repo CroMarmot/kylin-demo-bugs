@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>文件</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://gw.alipayobjects.com/os/rmsportal/QqPmmlwWpBYfhPqZnzLW.css" />
+    <link rel="stylesheet" type="text/css" href="/as/g/antui/antui/10.1.10/dpl/antui.css" media="all">
+</head>
+<body ontouchstart="">
+
+<div class="demo demo-list">
+    <div class="demo-transparent-title"></div>
+    <div class="demo-header">SaveFile</div>
+
+    <div class="demo-content">
+        <div class="am-list J-selectfile" style="padding:60px 0;text-align:center;background-color:#fff;color:#888;border:#ddd solid 1px;margin: 10px 0;">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQBAMAAAB8P++eAAAAG1BMVEUAAADOzs7Nzc3MzMzOzs7MzMzNzc3MzMzMzMz84WLlAAAACHRSTlMAFGavckajKA0S0MkAAABNSURBVEjHY8AETB0dApiiowpHFY4qHFU4qnAIK1TCAGodHU4YgqoMHcSB5oFUKIgBRDo6CjFFh0TMjCocVTiqcFThqEJiFbIaG2NRCADGL7JW7xnU8gAAAABJRU5ErkJggg==" style='width:40px;'>
+            <div class='text'>请选择文件</div>
+        </div>
+        <!-- <input type="file" /> -->
+        <div class="single-demo-button" style="margin: 0 .15rem .3rem;">
+            <button type="button" class="am-button J-savefile" style="margin:.1rem 0;">保存文件</button>
+            <button type="button" class="am-button white J-removeFile">删除文件</button>
+        </div>
+    </div>
+    <div class="demo-footer-box">
+        <div class="demo-footer">
+            <p>Alipay AntUI Mobile</p>
+            <p>Updated June 2,2016</p>
+        </div>
+    </div>
+
+</div>
+
+<script charset="utf-8" src="https://a.alipayobjects.com/amui/zepto/1.1.3/zepto.js"></script>
+<script charset="utf-8" src="https://a.alipayobjects.com/static/fastclick/1.0.6/fastclick.min.js"></script>
+
+<script src="/as/g/antui/antui/10.1.10/antui.js"></script>
+<script src="https://gw.alipayobjects.com/os/rmsportal/DuBxTgbCySjSEzwkAjEB.js"></script>
+<script>
+
+ $(function () {
+    var isInAlipay = (navigator.userAgent.indexOf("AlipayClient") > -1 || navigator.userAgent.indexOf("AliApp(AP") > -1);
+
+    if (isInAlipay) {
+
+      $(".J-selectfile").click(function(){
+            AlipayJSBridge.call('photo', {
+              dataType: 'fileURL',
+              imageFormat: 'jpg',
+              quality: 75,
+              maxWidth: 500,
+              maxHeight: 500,
+              allowEdit: true,
+              multimediaConfig: { // 可选，仅当该项被配置时，图片被传输至 APMultimedia
+                compress: 2, // 可选，默认为4。 0-低质量，1-中质量，2-高质量，3-不压缩，4-根据网络情况自动选择
+                business: "multiMedia" // 可选，默认为“NebulaBiz”
+              }
+            }, function (result) {
+              // private_token= 换成自己的蜻蜓账号的id就行，就会上传到蜻蜓的默认文件夹里。
+              AlipayJSBridge.call('uploadFile',{
+                url: 'https://rmsportal.alipay.com/api/v1/files?private_token=31c6bec6b2fa20057c2add0505f06c69',
+                filePath: result.fileURL,
+                name:'h5testabcd'
+              }, function (result) {
+                console.log(JSON.stringify(result));
+              });
+            });
+        });
+
+        $(".J-savefile").click(function(){
+            AlipayJSBridge.call('downloadFile',{
+                url: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+                type: 'image', // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
+                header: {
+                  'key1': 'value1',
+                  'key2': 'value2'
+                }
+            }, function (result) {
+                AlipayJSBridge.call('saveFile', {
+                    apFilePath: result.apFilePath
+                }, function(result){
+                    console.log(JSON.stringify(result));
+                });
+            });
+        });
+
+        $('.J-removeFile').click(function(){
+            AlipayJSBridge.call('downloadFile',{
+                url: 'http://www.w3school.com.cn/i/song.mp3',
+                type: 'audio', 
+                header: {
+                  'key1': 'value1',
+                  'key2': 'value2'
+                }
+            }, function (result) {
+                AlipayJSBridge.call('saveFile', {
+                    apFilePath: result.apFilePath
+                }, function(result2){
+                      //alert(JSON.stringify(result2));
+                    AlipayJSBridge.call('removeSavedFile', {
+                        apFilePath: result2.apFilePath
+                    }, function(result3){
+                        console.log(JSON.stringify(result3));
+                    });
+                });
+            });
+        })
+    }
+
+  });
+</script>
+
+</body>
+</html>
