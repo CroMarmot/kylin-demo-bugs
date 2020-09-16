@@ -19,20 +19,8 @@
       "index": {
         "entry": "./src/pages/index/index.js"
       },
-      "loadmore": {
-        "entry": "./src/pages/loadmore/index.js"
-      },
-      "listview": {
-        "entry": "./src/pages/listview/index.js"
-      },
-      "dialogue": {
-        "entry": "./src/pages/dialogue/index.js"
-      },
-      "validator": {
-        "entry": "./src/pages/validator/index.js"
-      },
-      "bugdemo": {
-        "entry": "./src/pages/bugdemo/index.js"
+      "mapStateBug": {
+        "entry": "./src/pages/mapStateBug/index.js"
       }
     },
     "pageTemplate": "./src/layout/layout.html",

@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <a href="./loadmore.html">loadmore</a>
-    <a href="./dialogue.html">dialogue</a>
-    <a href="./listview.html">listview</a>
+    <a href="./mapStateBug.html">mapStateBug</a>
   </div>
 </template>
 
