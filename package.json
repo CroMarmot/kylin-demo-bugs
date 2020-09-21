@@ -21,6 +21,9 @@
       },
       "mapStateBug": {
         "entry": "./src/pages/mapStateBug/index.js"
+      },
+      "routerBug": {
+        "entry": "./src/pages/routerBug/index.js"
       }
     },
     "pageTemplate": "./src/layout/layout.html",
@@ -61,9 +64,10 @@
     "@ali/kylin-framework": "./kylin_modules/_ali_kylin-framework",
     "@alipay/alipayjsapi": "./kylin_modules/_alipay_alipayjsapi",
     "@alipay/antui-vue": "./kylin_modules/_alipay_antui-vue",
+    "acorn": "5.7.3",
     "babel-runtime": "^6.25.0",
     "v-verify": "^1.1.0",
-    "acorn": "5.7.3"
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@ali/kylin-plugin-resource": "./kylin_modules/_ali_kylin-plugin-resource",

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <a href="./mapStateBug.html">mapStateBug</a>
+    <a href="./routerBug.html">routerBug</a>
   </div>
 </template>
 
