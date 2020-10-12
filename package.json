@@ -21,6 +21,9 @@
       },
       "mapStateBug": {
         "entry": "./src/pages/mapStateBug/index.js"
+      },
+      "pushWindowBug": {
+        "entry": "./src/pages/pushWindowBug/index.js"
       }
     },
     "pageTemplate": "./src/layout/layout.html",

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <a href="./mapStateBug.html">mapStateBug</a>
+    <a href="./pushWindowBug.html">pushWindowBug</a>
   </div>
 </template>
 
