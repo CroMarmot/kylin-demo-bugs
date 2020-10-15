@@ -38,7 +38,7 @@
 |kylin map state/map mutation/map actions映射 无有效的报错提示|map不存在的方法，重复map均无报错|原生|
 |node 12.18.x 运行直接报错|对应[node版本](https://nodejs.org/en/download/releases/)，直接运行`cnpm i && cnpm run dev`|node 12.16.1|
 |mPaas环境，上包以后fallback资源不删除不更新，下载后的离线包无此问题|新增离线包，增加文件，下架或更新文件后上包，通过链接地址依然访问的是首次上传的资源|保证离线包大小在100k上下，让用户能下载新的离线包|
-
+|封装后的android插件，地址发生变换会触发标题变化|`src/pages/routerBug`,(还需要android封装的代码,阿里的人来看说没法做到和setTitle一样在过程中设置不读title)|多调用一次`setTitle`或者改变`document.title`|
 
 ### 版本冲突
 
