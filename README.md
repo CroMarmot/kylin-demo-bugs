@@ -39,7 +39,7 @@
 |node 12.18.x 运行直接报错|对应[node版本](https://nodejs.org/en/download/releases/)，直接运行`cnpm i && cnpm run dev`|node 12.16.1|
 |mPaas环境，上包以后fallback资源不删除不更新，下载后的离线包无此问题|新增离线包，增加文件，下架或更新文件后上包，通过链接地址依然访问的是首次上传的资源|保证离线包大小在100k上下，让用户能下载新的离线包|
 |ios pushWindow参数传递 会对字符转化，安卓正常工作|`pages/pushWindowBug`|手动对可能有'\r\n','\r','\n'的字段进行split分组，不能预防问题，可能|
-|无法USB连接，用chrome进行调试|同样的debug安卓包(68基线)，usb连接电脑，chrome打开chrome://inspect，在android 10及以下可以看到手机上chrome的标签页和应用内的页面，在android 11上，能看到手机chrome的标签页，看不到应用内的页面|使用未升级的测试机 (2020-10-23发现)|
+|无法USB连接，用chrome进行调试|同样的debug安卓包(68基线)，usb连接电脑，chrome打开chrome://inspect，在android 10及以下可以看到手机上chrome的标签页和应用内的页面，在android 11上，能看到手机chrome的标签页，看不到应用内的页面|已经解决(https://help.aliyun.com/document_detail/184898.html)|
 
 ### 版本冲突
 
