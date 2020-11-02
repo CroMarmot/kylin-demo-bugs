@@ -22,6 +22,9 @@
       "mapStateBug": {
         "entry": "./src/pages/mapStateBug/index.js"
       },
+      "mockBug": {
+        "entry": "./src/pages/mockBug/index.js"
+      },
       "pushWindowBug": {
         "entry": "./src/pages/pushWindowBug/index.js"
       }

@@ -2,6 +2,7 @@
   <div id="app">
     <a href="./mapStateBug.html">mapStateBug</a>
     <a href="./pushWindowBug.html">pushWindowBug</a>
+    <a href="./mockBug.html">mockBug</a>
   </div>
 </template>
 

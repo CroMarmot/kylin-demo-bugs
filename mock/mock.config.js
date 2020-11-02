@@ -70,5 +70,9 @@ config.rpcMockList = [
 // config.call.rpc = false; // 关闭对rpc接口的mock
 // config.call.httpRequest = false; // 关闭对httpRequest接口的mock
 // config.call.toast = false; // 关闭对toast接口的mock
+//
+
+// 原本没有下面一行 加上了也没有效果
+config.jsapis = ['rpc'];
 
 window.lunaMockConfig = config;
