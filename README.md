@@ -29,13 +29,13 @@
 |---|---|---|
 |package.json文件依赖书写方式不支持npm和yarn|仅`cnpm install`能安装依赖，`npm i` 和`yarn`运行报错|只使用cnpm|
 |cnpm 不会生成lock文件 有版本管理风险|运行`cnpm i`不会生成|暂无|
-|kylin提供的mapStateToProps无法同步得到变量修改|相对的 vuex 官方提供的`mapState`可以做到,`localhost:8090/mapStateBug.html`|原生|
+|kylin提供的mapStateToProps无法同步得到变量修改|相对的 vuex 官方提供的`mapState`可以做到,`localhost:8090/mapStateBug.html`|原生vuex的Helper|
 |package.json书写不支持package.json默认支持的多版本依赖|见下[版本冲突](#版本冲突)|外层仓库|
 |kylin提供的Component导致vue原生$emit不可用(缺少对外的文档支持?)|在Component中带有map映射以后，会无法emit出消息|原生,(最新的文档增加了mapEvents,但是没有相应说明)|
-|kylin提供的Component导致官方vue-router的守卫事件不可用|`https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards` 失效|原生|
+|kylin提供的Component导致官方vue-router的守卫事件不可用|`https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards` 失效|原生vuex的Helper|
 |android **68版本基线**升级后，启动[mock](https://help.aliyun.com/document_detail/72531.html?spm=a2c4g.11186623.6.1385.28ed7836pfwp8f)无法和客户端通讯|android对应基线,运行`cnpm run mock:dev`,调用[ap或AlipayJSBridge](https://myjsapi.alipay.com/index.html)的方法 均调用mock兜底，期望没有mock的方法应该走客户端, 见`src/pages/mockBug`|暂无|
-|kylin dependency 书写 无有效的报错提示|dependency 的尾部漏写关闭符合` /> `写成`>`|原生|
-|kylin map state/map mutation/map actions映射 无有效的报错提示|map不存在的方法，重复map均无报错|原生|
+|kylin dependency 书写 无有效的报错提示|dependency 的尾部漏写关闭符合` /> `写成`>`|原生 coponents 写法|
+|kylin map state/map mutation/map actions映射 无有效的报错提示|map不存在的方法，重复map均无报错|原生vuex的Helper|
 |node 12.18.x 运行直接报错|对应[node版本](https://nodejs.org/en/download/releases/)，直接运行`cnpm i && cnpm run dev`|node 12.16.1|
 |mPaas环境，上包以后fallback资源不删除不更新，下载后的离线包无此问题|新增离线包，增加文件，下架或更新文件后上包，通过链接地址依然访问的是首次上传的资源|保证离线包大小在100k上下，让用户能下载新的离线包|
 |ios pushWindow参数传递 会对字符转化，安卓正常工作|`pages/pushWindowBug`|手动对可能有'\r\n','\r','\n'的字段进行split分组，不能预防问题，可能|
