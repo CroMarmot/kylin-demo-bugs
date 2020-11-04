@@ -8,7 +8,6 @@
 </style>
 
 <script>
-
   import { Component } from '@ali/kylin-framework';
 
   @Component

@@ -18,8 +18,8 @@
 </style>
 
 <script>
-import { Component } from "@ali/kylin-framework";
-import ap from "@alipay/alipayjsapi";
+import { Component } from '@ali/kylin-framework';
+import ap from '@alipay/alipayjsapi';
 
 function JsAPI(type, params, fn) {
   ap.call(type, params, fn);
@@ -28,59 +28,59 @@ function JsAPI(type, params, fn) {
 @Component({})
 export default class IndexView {
   data = {
-    name: "mockBug",
+    name: 'mockBug'
   };
   methods = {
     rpc() {
       JsAPI(
-        "rpc",
+        'rpc',
         {
-          operationType: "xxx",
+          operationType: 'xxx',
           requestData: [],
           timeout: 60,
-          headers: {},
+          headers: {}
         },
         (e) => {
-          alert(JSON.stringify(e));
+          window.alert(JSON.stringify(e));
         }
       );
     },
     apAlert() {
       JsAPI(
-        "alert",
+        'alert',
         {
-          title: "亲",
-          message: "你好",
-          button: "确定",
+          title: '亲',
+          message: '你好',
+          button: '确定'
         },
         function (e) {
-          alert(JSON.stringify(e));
+          window.alert(JSON.stringify(e));
         }
       );
     },
     alipayjsbridgeAlert() {
       // https://myjsapi.alipay.com/jsapi/ui/alert.html
       window.AlipayJSBridge.call(
-        "alert",
+        'alert',
         {
-          title: "亲",
-          message: "你好",
-          button: "确定",
+          title: '亲',
+          message: '你好',
+          button: '确定'
         },
         function (e) {
-          alert(JSON.stringify(e));
+          window.alert(JSON.stringify(e));
         }
       );
     },
     customApi() {
-      JsAPI("customApi", {}, function (e) {
-        alert(JSON.stringify(e));
+      JsAPI('customApi', {}, function (e) {
+        window.alert(JSON.stringify(e));
       });
     },
-    contact(){
+    contact() {
       // https://myjsapi.alipay.com/jsapi/native/contact.html
-      JsAPI("contact", {}, function (e) {
-        alert(JSON.stringify(e));
+      JsAPI('contact', {}, function (e) {
+        window.alert(JSON.stringify(e));
       });
     }
   };

@@ -6,7 +6,7 @@ import Vue from 'vue';
 import vverify from 'v-verify';
 
 Vue.use(vverify, {
-  mode: 'insert', 
+  mode: 'insert',
   errorClass: 'verify-error',
   errorForm: 'verify-form-error'
 });

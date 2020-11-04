@@ -182,7 +182,7 @@ export default {
     },
     resetAndReload(clearList = false) {
       this.setPageNum(1);
-      if ( clearList ) {
+      if (clearList) {
         this.dListData = [];
       }
 
@@ -192,7 +192,6 @@ export default {
         pageSize: this.pageSize,
         type: 'RELOAD'
       }, this._afterLoadDataTop);
-
     },
     // 触发下滑refresh
     _loadTop() {
@@ -230,7 +229,7 @@ export default {
       const $wrap = this.$refs.wrap;
       const $loadmore = this.$refs.loadmore.$el;
       const canScroll = $loadmore.clientHeight > $wrap.clientHeight;
-      if ( this.dCanScroll !== canScroll ) {
+      if (this.dCanScroll !== canScroll) {
         this.dCanScroll = canScroll;
       }
     }

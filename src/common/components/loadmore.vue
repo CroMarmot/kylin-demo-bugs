@@ -300,7 +300,7 @@
         this.direction = '';
       },
       handlerScroll(event) {
-        if( this.bottomLock ) return
+        if (this.bottomLock) return;
         if (this.bottomAllLoaded) return;
         this.bottomReached = this.bottomReached || this.checkBottomReached();
         if (this.bottomReached && this.bottomStatus !== 'loading') {
@@ -312,7 +312,7 @@
         }
       },
       triggerBottomLoad() {
-        if( this.bottomLock ) return
+        if (this.bottomLock) return;
         if (this.bottomAllLoaded) return;
         if (this.bottomStatus !== 'loading') {
           this.bottomDropped = true;
