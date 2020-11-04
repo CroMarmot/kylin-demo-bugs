@@ -43,28 +43,14 @@
 
 ### 版本冲突
 
-按理说npm本身已经解决了冲突发生，之前具体是那一个会冲突，没具体记录，记得下面某几个依赖需要的时候会和kylin内部的冲突。
+按理说`npm`本身已经解决了冲突发生，之前具体是那一个会冲突，下面几个依赖需要的时候会和kylin内部(cnpm的问题?)的冲突。
 
 ```
-"deep-extend": "^0.6.0",
-"jsdom": "^15.2.1",
-"@babel/core": "^7.9.0",
-"@babel/preset-env": "^7.9.5",
 "babel-loader": "^8.1.0",
-"babel-plugin-istanbul": "^6.0.0",
-"istanbul-instrumenter-loader": "^3.0.1",
-"jasmine-core": "^3.5.0",
-"karma": "^5.0.2",
-"karma-chrome-launcher": "^3.1.0",
-"karma-coverage-istanbul-reporter": "^2.1.1",
-"karma-jasmine": "^3.1.1",
-"karma-jasmine-html-reporter": "^1.5.3",
-"karma-webpack": "^4.0.2",
-"rimraf": "^2.6.1",
 "webpack": "^4.42.1",
-"archiver": "^3.1.1",
-"fs-extra": "^9.0.1",
-"gulp": "^4.0.2",
-"gulp-less": "^4.0.1",
-"minimist": "^1.2.5"
 ```
+
+> 重现步骤
+
+`package.json`中增加上面两项，执行`cnpm run build`报错
+
