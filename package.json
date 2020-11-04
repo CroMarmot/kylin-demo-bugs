@@ -67,9 +67,15 @@
     "@ali/kylin-framework": "./kylin_modules/_ali_kylin-framework",
     "@alipay/alipayjsapi": "./kylin_modules/_alipay_alipayjsapi",
     "@alipay/antui-vue": "./kylin_modules/_alipay_antui-vue",
+    "acorn": "5.7.3",
     "babel-runtime": "^6.25.0",
+    "echarts": "^4.2.1",
+    "lodash": "^4.17.15",
+    "qrcode": "^1.4.4",
+    "swiper": "^4.5.0",
     "v-verify": "^1.1.0",
-    "acorn": "5.7.3"
+    "vue-clipboard2": "^0.3.0",
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@ali/kylin-plugin-resource": "./kylin_modules/_ali_kylin-plugin-resource",

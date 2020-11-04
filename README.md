@@ -40,6 +40,7 @@
 |mPaas环境，上包以后fallback资源不删除不更新，下载后的离线包无此问题|新增离线包，增加文件，下架或更新文件后上包，通过链接地址依然访问的是首次上传的资源|保证离线包大小在100k上下，让用户能下载新的离线包|
 |ios pushWindow参数传递 会对字符转化，安卓正常工作|`pages/pushWindowBug`|手动对可能有'\r\n','\r','\n'的字段进行split分组，不能预防问题，可能|
 |无法USB连接，用chrome进行调试|同样的debug安卓包(68基线)，usb连接电脑，chrome打开chrome://inspect，在android 10及以下可以看到手机上chrome的标签页和应用内的页面，在android 11上，能看到手机chrome的标签页，看不到应用内的页面|已经解决(https://help.aliyun.com/document_detail/184898.html)|
+|eslint 受到父级文件夹影响？|[eslint](#eslint)自定义的Components相关书写，没有对应的eslint,prettier等配套工具, 默认的`.eslintrc`里关掉了`no-unused-vars`,调为2相关内容会有报错|暂无|
 
 ### 版本冲突
 
@@ -54,3 +55,38 @@
 
 `package.json`中增加上面两项，执行`cnpm run build`报错
 
+### eslint
+
+eslint插件相关问题？
+
+> 重现步骤
+
+[src/pages/eslintBug/demo.sh](src/pages/eslintBug/demo.sh)
+
+或`curl https://raw.githubusercontent.com/CroMarmot/kylin-demo-bugs/master/src/pages/eslintBug/demo.sh | bash`
+
+输入命令
+
+`./node_modules/.bin/eslint --ext js --ext vue ./src/pages/eslintBug/components/index-view.vue`
+
+
+期望输出(不应该受到任何上层文件夹的影响)
+
+```
+  34:9  error  'a' is defined but never used  no-unused-vars
+```
+
+实际
+
+```
+  11:10  error  'Component' is defined but never used  no-unused-vars
+  19:3   error  'components' is not defined            no-undef
+  19:18  error  'PlanCard' is not defined              no-undef
+  20:3   error  'data' is not defined                  no-undef
+  22:3   error  'filters' is not defined               no-undef
+  25:3   error  'watch' is not defined                 no-undef
+  28:3   error  'computed' is not defined              no-undef
+  31:3   error  'props' is not defined                 no-undef
+  34:9   error  'a' is defined but never used          no-unused-vars
+  37:3   error  'methods' is not defined               no-undef
+```
