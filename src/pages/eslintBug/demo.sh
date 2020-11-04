@@ -3,7 +3,7 @@ mkdir eslintBugDemoDir && cd eslintBugDemoDir
 # 初始化父目录
 yarn init -y
 # 克隆当前仓库
-git clone git@github.com:CroMarmot/kylin-demo-bugs.git --depth=1 && cd kylin-demo-bugs
+git clone https://github.com/CroMarmot/kylin-demo-bugs.git --depth=1 && cd kylin-demo-bugs
 
 cnpm i
 # cnpm run lint # 正常
