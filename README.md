@@ -33,7 +33,7 @@
 |package.json书写不支持package.json默认支持的多版本依赖|见下[版本冲突](#版本冲突)|外层仓库|
 |kylin提供的Component导致vue原生$emit不可用(缺少对外的文档支持?)|在Component中带有map映射以后，会无法emit出消息|原生,(最新的文档增加了mapEvents,但是没有相应说明)|
 |kylin提供的Component导致官方vue-router的守卫事件不可用|`https://router.vuejs.org/guide/advanced/navigation-guards.html#in-component-guards` 失效|原生vuex的Helper|
-|android **68版本基线**升级后，启动[mock](https://help.aliyun.com/document_detail/72531.html?spm=a2c4g.11186623.6.1385.28ed7836pfwp8f)无法和客户端通讯|android对应基线,运行`cnpm run mock:dev`,调用[ap或AlipayJSBridge](https://myjsapi.alipay.com/index.html)的方法 均调用mock兜底，期望没有mock的方法应该走客户端, 见`src/pages/mockBug`|暂无|
+|android **68版本基线**升级后，启动[mock](https://help.aliyun.com/document_detail/72531.html?spm=a2c4g.11186623.6.1385.28ed7836pfwp8f)无法和客户端通讯|android对应基线,运行`cnpm run mock:dev`,调用[ap或AlipayJSBridge](https://myjsapi.alipay.com/index.html)的方法 均调用mock兜底，期望没有mock的方法应该走客户端, 见`src/pages/mockBug`| 已解决,修改`kylin_modules/_alipay_luna-mock/dist/index.js` 中`var n=/alipayclient/i.test(window.navigator.userAgent)`为`var n=/mpaasclient|alipayclient/i.test(window.navigator.userAgent)` 后 重新安装依赖|
 |kylin dependency 书写 无有效的报错提示|dependency 的尾部漏写关闭符合` /> `写成`>`|原生 coponents 写法|
 |kylin map state/map mutation/map actions映射 无有效的报错提示|map不存在的方法，重复map均无报错|原生vuex的Helper|
 |node 12.18.x 运行直接报错|对应[node版本](https://nodejs.org/en/download/releases/)，直接运行`cnpm i && cnpm run dev`|node 12.16.1|
