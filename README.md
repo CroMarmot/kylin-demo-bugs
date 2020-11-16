@@ -42,6 +42,7 @@
 |无法USB连接，用chrome进行调试|同样的debug安卓包(68基线)，usb连接电脑，chrome打开chrome://inspect，在android 10及以下可以看到手机上chrome的标签页和应用内的页面，在android 11上，能看到手机chrome的标签页，看不到应用内的页面|已经解决(https://help.aliyun.com/document_detail/184898.html)|
 |eslint 受到父级文件夹影响？|[eslint](#eslint)自定义的Components相关书写，没有对应的eslint,prettier等配套工具, 默认的`.eslintrc`里关掉了`no-unused-vars`,调为2相关内容会有报错|暂无|
 |内网`mappcenter.mpaas.com`打开网页加载很久|经过排查是加载css和字体耗时导致|利用firefox或chromium的按url屏蔽功能，屏蔽`http://at.alicdn.com/`和`https://at.alicdn.com/`两个|
+|`mock`模式下无法跨页传参|之前在android的web中通过[这样](https://github.com/CroMarmot/kylin-demo-bugs/blob/6f741cf0e82d3c8745ced136cc266e3a1e95bf30/src/common/js/android.js#L9-L27)的方式进行跨页传参和获取参数,但在启用mock后，无法传参|暂无，手动写死接受参数的部分 `= getPassData() \|\| {balabala...}` |
 
 ### 版本冲突
 
