@@ -38,11 +38,14 @@
 |kylin map state/map mutation/map actions映射 无有效的报错提示|map不存在的方法，重复map均无报错|原生vuex的Helper|20201015提出|
 |node 12.18.x 运行直接报错|对应[node版本](https://nodejs.org/en/download/releases/)，直接运行`cnpm i && cnpm run dev`|node 12.16.1|20201015提出|
 |mPaas环境，上包以后fallback资源不删除不更新，下载后的离线包无此问题|新增离线包，增加文件，下架或更新文件后上包，通过链接地址依然访问的是首次上传的资源|保证离线包大小在100k上下，让用户能下载新的离线包|20201015提出|
-|ios pushWindow参数传递 会对字符转化，安卓正常工作|`pages/pushWindowBug`|手动对可能有'\r\n','\r','\n'的字段进行split分组，不能预防问题（可能还有更多的字符转义）|20201012提出|
+|ios pushWindow参数传递 会对字符转化，安卓正常工作|`pages/pushWindowBug`,数据有单引号时甚至会整个`window.AlipayJSBridge` 为`undefined` |手动对可能有'\r\n','\r','\n'的字段进行split分组，不能预防问题（可能还有更多的字符转义），临时方案 BASE64 包裹整个串传递 |20201012提出,尚未解决|
 |无法USB连接，用chrome进行调试|同样的debug安卓包(68基线)，usb连接电脑，chrome打开chrome://inspect，在android 10及以下可以看到手机上chrome的标签页和应用内的页面，在android 11上，能看到手机chrome的标签页，看不到应用内的页面|已经解决(https://help.aliyun.com/document_detail/184898.html)|20201027 提出/解决|
 |eslint 受到父级文件夹影响？|[eslint](#eslint)自定义的Components相关书写，没有对应的eslint,prettier等配套工具, 默认的`.eslintrc`里关掉了`no-unused-vars`,调为2相关内容会有报错|暂无|20201015提出|
 |内网`mappcenter.mpaas.com`打开网页加载很久|经过排查是加载css和字体耗时导致|利用firefox或chromium的按url屏蔽功能，屏蔽`http://at.alicdn.com/`和`https://at.alicdn.com/`两个|20201015提出|
 |`mock`模式下无法跨页传参|之前在android的web中通过[这样](https://github.com/CroMarmot/kylin-demo-bugs/blob/6f741cf0e82d3c8745ced136cc266e3a1e95bf30/src/common/js/android.js#L9-L27)的方式进行跨页传参和获取参数,但在启用mock后，无法传参|暂无，手动写死接受参数的部分 `= getPassData() \|\| {...}` |20201116提出|
+|mappcenter.mpaas.com新版右侧弹出界面，在不同包之间切换上包时，存在入口URL不更新导致上包无法打开的问题|暂无准确复现步骤|暂无，出现一个问题解决一个|2021-01-04|
+|mappcenter.mpaas.com新版批量上包csv字段校验规则和单个页面填写规则不一致|单独上包时无需填写最高版本|临时方案，最高版本填写99.99.99.99|2021-01-04|
+
 
 ### 版本冲突
 
