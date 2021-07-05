@@ -60,6 +60,17 @@
 
 `package.json`中增加上面两项，执行`cnpm run build`报错
 
+
+#### 版本冲突2
+
+在已经安装完依赖的仓库添加vuepress报版本不一致，在清空了`node_modules`后增加以下两项，安装完后，vuepress能工作，而kylin打包失败
+
+```
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-flexsearch": "^0.2.0"
+```
+
+
 ### eslint
 
 eslint插件相关问题？
