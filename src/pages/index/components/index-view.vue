@@ -18,6 +18,7 @@
 <dependency component="loadmore" src="common/components/loadmore.vue" lazy />
 
 <script type="text/javascript">
+  import * as echarts from 'echarts/core';
   import { Component } from '@ali/kylin-framework';
 
   @Component
