@@ -45,6 +45,7 @@
 |`mock`模式下无法跨页传参|之前在android的web中通过[这样](https://github.com/CroMarmot/kylin-demo-bugs/blob/6f741cf0e82d3c8745ced136cc266e3a1e95bf30/src/common/js/android.js#L9-L27)的方式进行跨页传参和获取参数,但在启用mock后，无法传参|暂无，手动写死接受参数的部分 `= getPassData() \|\| {...}` |20201116提出|影响开发调试|
 |mappcenter.mpaas.com新版右侧弹出界面，在不同包之间切换上包时，存在入口URL不更新导致上包无法打开的问题|暂无准确复现步骤|暂无，出现一个问题解决一个|2021-01-04|影响测试|
 |mappcenter.mpaas.com新版批量上包csv字段校验规则和单个页面填写规则不一致|单独上包时无需填写最高版本|临时方案，最高版本填写99.99.99.99|2021-01-04|影响开发|
+|kylin build 和echarts5.1.2按需引入冲突|见下[kylinbuild](#kylinbuild)|全量引入echarts dist(打包体积翻倍)|2021-08-12提出|影响开发|
 
 
 ### 版本冲突
@@ -113,4 +114,34 @@ eslint插件相关问题？
 
 修改`kylin_modules/_alipay_luna-mock/dist/index.js` 中`var n=/alipayclient/i.test(window.navigator.userAgent)`为`var n=/mpaasclient|alipayclient/i.test(window.navigator.userAgent)` 后 重新安装依赖
 
+### kylinbuild
+
+重现步骤
+
+1. 下载官方 kylin-demo.zip
+2. `cnpm i`
+3. `cnpm i echarts --save`
+4. 任选vue文件，增加`import * as echarts from 'echarts/core';` [echarts文档](https://echarts.apache.org/zh/tutorial.html#%E5%9C%A8%E6%89%93%E5%8C%85%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)
+5. `cnpm run build`
+
+报错
+
+```
+js/index.b65afe3.js from UglifyJs
+SyntaxError: Unexpected token: string (./lib/export/core) [./~/_echarts@5.1.2@echarts/core.js:20,0]
+```
+
+[重现分支 kylin-build-echarts-5.1.2](https://github.com/CroMarmot/kylin-demo-bugs/tree/kylin-build-echarts-5.1.2)
+
+> 软件版本
+
+```
+cnpm@7.0.0 (/home/cromarmot/.npm_global/lib/node_modules/cnpm/lib/parse_argv.js)
+npm@6.14.14 (/home/cromarmot/.npm_global/lib/node_modules/cnpm/node_modules/npm/lib/npm.js)
+node@12.16.1 (/home/cromarmot/.nvm/versions/node/v12.16.1/bin/node)
+npminstall@5.0.1 (/home/cromarmot/.npm_global/lib/node_modules/cnpm/node_modules/npminstall/lib/index.js)
+prefix=/home/cromarmot/.npm_global
+linux x64 5.4.72-microsoft-standard-WSL2
+registry=https://registry.nlark.com
+```
 
